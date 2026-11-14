@@ -1,0 +1,98 @@
+[
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\CinemaAutoatendimento_autogen\\mocs_compilation.cpp.obj -c \"C:\\Users\\artur\\Desktop\\cinema\\builds\\GCC 13.1.0 x86_64-w64-mingw32\\Debug\\CinemaAutoatendimento_autogen\\mocs_compilation.cpp\"",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\builds\\GCC 13.1.0 x86_64-w64-mingw32\\Debug\\CinemaAutoatendimento_autogen\\mocs_compilation.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\CinemaAutoatendimento_autogen\\mocs_compilation.cpp.obj"
+},
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\src\\Assento.cpp.obj -c C:\\Users\\artur\\Desktop\\cinema\\src\\Assento.cpp",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\src\\Assento.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\src\\Assento.cpp.obj"
+},
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\src\\Carrinho.cpp.obj -c C:\\Users\\artur\\Desktop\\cinema\\src\\Carrinho.cpp",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\src\\Carrinho.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\src\\Carrinho.cpp.obj"
+},
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\src\\Filme.cpp.obj -c C:\\Users\\artur\\Desktop\\cinema\\src\\Filme.cpp",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\src\\Filme.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\src\\Filme.cpp.obj"
+},
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\src\\Ingresso.cpp.obj -c C:\\Users\\artur\\Desktop\\cinema\\src\\Ingresso.cpp",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\src\\Ingresso.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\src\\Ingresso.cpp.obj"
+},
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\src\\ItemBomboniere.cpp.obj -c C:\\Users\\artur\\Desktop\\cinema\\src\\ItemBomboniere.cpp",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\src\\ItemBomboniere.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\src\\ItemBomboniere.cpp.obj"
+},
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\src\\MainWindow.cpp.obj -c C:\\Users\\artur\\Desktop\\cinema\\src\\MainWindow.cpp",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\src\\MainWindow.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\src\\MainWindow.cpp.obj"
+},
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\src\\Sala.cpp.obj -c C:\\Users\\artur\\Desktop\\cinema\\src\\Sala.cpp",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\src\\Sala.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\src\\Sala.cpp.obj"
+},
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\src\\Sessao.cpp.obj -c C:\\Users\\artur\\Desktop\\cinema\\src\\Sessao.cpp",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\src\\Sessao.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\src\\Sessao.cpp.obj"
+},
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\src\\SidebarCarrinhoWidget.cpp.obj -c C:\\Users\\artur\\Desktop\\cinema\\src\\SidebarCarrinhoWidget.cpp",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\src\\SidebarCarrinhoWidget.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\src\\SidebarCarrinhoWidget.cpp.obj"
+},
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\src\\Tela1SelecaoFilmeWidget.cpp.obj -c C:\\Users\\artur\\Desktop\\cinema\\src\\Tela1SelecaoFilmeWidget.cpp",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\src\\Tela1SelecaoFilmeWidget.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\src\\Tela1SelecaoFilmeWidget.cpp.obj"
+},
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\src\\Tela2AssentosWidget.cpp.obj -c C:\\Users\\artur\\Desktop\\cinema\\src\\Tela2AssentosWidget.cpp",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\src\\Tela2AssentosWidget.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\src\\Tela2AssentosWidget.cpp.obj"
+},
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\src\\Tela3BomboniereWidget.cpp.obj -c C:\\Users\\artur\\Desktop\\cinema\\src\\Tela3BomboniereWidget.cpp",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\src\\Tela3BomboniereWidget.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\src\\Tela3BomboniereWidget.cpp.obj"
+},
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\src\\Tela4PagamentoWidget.cpp.obj -c C:\\Users\\artur\\Desktop\\cinema\\src\\Tela4PagamentoWidget.cpp",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\src\\Tela4PagamentoWidget.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\src\\Tela4PagamentoWidget.cpp.obj"
+},
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\src\\main.cpp.obj -c C:\\Users\\artur\\Desktop\\cinema\\src\\main.cpp",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\src\\main.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\src\\main.cpp.obj"
+},
+{
+  "directory": "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+  "command": "f:\\qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 -I\"C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/include\" -IC:/Users/artur/Desktop/cinema/include -isystem F:/qt/6.12.0/mingw_64/include/QtWidgets -isystem F:/qt/6.12.0/mingw_64/include -isystem F:/qt/6.12.0/mingw_64/include/QtCore -isystem F:/qt/6.12.0/mingw_64/mkspecs/win32-g++ -isystem F:/qt/6.12.0/mingw_64/include/QtGui -g -std=gnu++17 -o CMakeFiles\\CinemaAutoatendimento.dir\\CinemaAutoatendimento_autogen\\UVLADIE3JM\\qrc_recursos.cpp.obj -c \"C:\\Users\\artur\\Desktop\\cinema\\builds\\GCC 13.1.0 x86_64-w64-mingw32\\Debug\\CinemaAutoatendimento_autogen\\UVLADIE3JM\\qrc_recursos.cpp\"",
+  "file": "C:\\Users\\artur\\Desktop\\cinema\\builds\\GCC 13.1.0 x86_64-w64-mingw32\\Debug\\CinemaAutoatendimento_autogen\\UVLADIE3JM\\qrc_recursos.cpp",
+  "output": "CMakeFiles\\CinemaAutoatendimento.dir\\CinemaAutoatendimento_autogen\\UVLADIE3JM\\qrc_recursos.cpp.obj"
+}
+]
