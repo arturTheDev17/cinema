@@ -13,7 +13,6 @@
 
 void MainWindow::aplicarEstiloGlobal() {
     QString estiloGlobal = R"(
-        /* Janela Principal e Widgets gerais com fundo escuro */
         QWidget {
             background-color: #181c25;
             color: #fbfef9;
@@ -38,18 +37,15 @@ void MainWindow::aplicarEstiloGlobal() {
             font-size: 20px;
         }
 
-        /* Áreas de Rolagem e Containers internos */
         QScrollArea, QListWidget, QScrollArea > QWidget > QWidget {
           border: 0px solid #dec402;
         }
 
-        /* Labels descritivas dentro dos containeres */
         QGroupBox QLabel {
             background-color: transparent;
             color: #fbfef9;
         }
 
-        /* Lista de Sessões com fundo escuro e seleção vermelha/amarela */
         QListWidget {
             background-color: #181c25;
             color: #fbfef9;
@@ -57,7 +53,6 @@ void MainWindow::aplicarEstiloGlobal() {
             selection-color: #fbfef9;
         }
 
-        /* Caixas de Número (SpinBox) */
         QSpinBox {
             background-color: #181c25;
             color: #fbfef9;
@@ -66,7 +61,6 @@ void MainWindow::aplicarEstiloGlobal() {
             background-color: #3d4d52;
         }
 
-        /* Botões Neutros de Uso Normal */
         QPushButton {
             background-color: #3d4d52;
             color: #fbfef9;
@@ -79,12 +73,11 @@ void MainWindow::aplicarEstiloGlobal() {
             color: #181c25;
         }
 
-        /* Scrollbars Minimalistas e Modernas */
         QScrollBar:vertical {
             border: none;
             background: #181c25;
             width: 8px;
-            margin: 0px 0px 0px 0px;
+            margin: 0px;
             border-radius: 4px;
         }
         QScrollBar::handle:vertical {
@@ -93,22 +86,20 @@ void MainWindow::aplicarEstiloGlobal() {
             border-radius: 4px;
         }
         QScrollBar::handle:vertical:hover {
-            background: #dec402; /* Amarelo de destaque ao passar o mouse */
+            background: #dec402;
         }
         QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
             height: 0px;
-            subcontrol-position: none;
         }
         QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
             background: none;
         }
 
-        /* Scrollbars Horizontais (se houver) */
         QScrollBar:horizontal {
             border: none;
             background: #181c25;
             height: 8px;
-            margin: 0px 0px 0px 0px;
+            margin: 0px;
             border-radius: 4px;
         }
         QScrollBar::handle:horizontal {
@@ -137,11 +128,13 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     resize(1100, 720);
         
     std::thread(&MainWindow::iniciarModoAdminConsole, this).detach();
-    #ifdef _WIN32
+
+#ifdef _WIN32
     HWND hwnd = reinterpret_cast<HWND>(this->winId());
     BOOL useDarkMode = TRUE;
     DwmSetWindowAttribute(hwnd, DWMWA_USE_IMMERSIVE_DARK_MODE, &useDarkMode, sizeof(useDarkMode));
 #endif
+
     inicializarDados();
 
     stackedWidget = new QStackedWidget(this);
@@ -157,10 +150,9 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     stackedWidget->addWidget(tela3);
     stackedWidget->addWidget(tela4);
 
-    // No construtor da MainWindow.cpp, adicione atalhos de navegação rápida:
     new QShortcut(QKeySequence(Qt::Key_F1), this, [this]() { stackedWidget->setCurrentWidget(tela1); });
     new QShortcut(QKeySequence(Qt::Key_F2), this, [this]() { 
-        if(repoSessoes.tamanho() > 0) {
+        if (repoSessoes.tamanho() > 0) {
             carrinho.limparTudo();
             carrinho.definirSessao(&repoSessoes.obter(0));
             carrinho.adicionarIngresso(std::make_unique<IngressoInteira>(32.0));
@@ -206,9 +198,9 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     });
 
     QList<QPushButton*> todosBotoes = this->findChildren<QPushButton*>();
-        for (QPushButton* btn : todosBotoes) {
-            btn->setCursor(Qt::PointingHandCursor);
-        }
+    for (QPushButton* btn : todosBotoes) {
+        btn->setCursor(Qt::PointingHandCursor);
+    }
 }
 
 void MainWindow::iniciarModoAdminConsole() {
@@ -243,7 +235,8 @@ void MainWindow::iniciarModoAdminConsole() {
 
             repoFilmes.adicionar(Filme(titulo, duracao, classificacao, genero));
             std::cout << "[ADMIN] Filme adicionado com sucesso!\n";
-        } else if (opcao == 2) {
+        } 
+        else if (opcao == 2) {
             std::string nome;
             double preco;
             
@@ -260,8 +253,8 @@ void MainWindow::iniciarModoAdminConsole() {
             QMetaObject::invokeMethod(tela3, [this]() {
                 tela3->atualizarTela();
             }, Qt::QueuedConnection);
-            
-        } else if (opcao == 3) {
+        } 
+        else if (opcao == 3) {
             std::cout << "\n================ [RELATORIO DO SISTEMA] ================\n";
             
             std::cout << "\n--- FILMES CADASTRADOS ---\n";

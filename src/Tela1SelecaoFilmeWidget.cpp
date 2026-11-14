@@ -8,22 +8,15 @@
 #include <memory>
 
 Tela1SelecaoFilmeWidget::Tela1SelecaoFilmeWidget(RepositorioGenerico<Filme>& filmes,
-                                                 RepositorioGenerico<Sessao>& sessoes,
-                                                 Carrinho& carrinho,
-                                                 QWidget* parent)
+                                               RepositorioGenerico<Sessao>& sessoes,
+                                               Carrinho& carrinho,
+                                               QWidget* parent)
     : QWidget(parent), repoFilmes(filmes), repoSessoes(sessoes), carrinho(carrinho), filmeSelecionadoIndex(-1),
       qtdInteiraVal(0), qtdMeiaVal(0) {
 
     QVBoxLayout* mainLayout = new QVBoxLayout(this);
-
-    // QLabel* tituloTela = new QLabel("ESCOLHA SUA SESSÃO", this);
-    // tituloTela->setStyleSheet("font-size: 24px; font-weight: bold; color: #D32222; margin-bottom: 8px;");
-    // mainLayout->addWidget(tituloTela);
-
-    // Layout principal dividido em duas colunas (Esquerda: Filmes | Direita: Sessões + Ingressos)
     QHBoxLayout* colunasLayout = new QHBoxLayout();
 
-    // --- COLUNA ESQUERDA: Filmes em Cartaz ---
     QGroupBox* grpFilmes = new QGroupBox("Filmes em Cartaz", this);
     QVBoxLayout* layFilmesGrp = new QVBoxLayout(grpFilmes);
     
@@ -44,7 +37,6 @@ Tela1SelecaoFilmeWidget::Tela1SelecaoFilmeWidget(RepositorioGenerico<Filme>& fil
     layFilmesGrp->addWidget(scrollFilmes, 1);
     layFilmesGrp->addWidget(lblDetalhesFilme);
 
-    // --- COLUNA DIREITA: Sessões Disponíveis + Seleção de Ingressos Estilo Bomboniere ---
     QVBoxLayout* colunaDireitaLayout = new QVBoxLayout();
 
     QGroupBox* grpSessoes = new QGroupBox("Sessões", this);
@@ -55,11 +47,9 @@ Tela1SelecaoFilmeWidget::Tela1SelecaoFilmeWidget(RepositorioGenerico<Filme>& fil
     laySessoes->addWidget(listaSessoes);
     colunaDireitaLayout->addWidget(grpSessoes, 2);
 
-    // Grupo de Ingressos Estilo Bomboniere (Controles [-] [Qtd] [+])
     QGroupBox* grpIngressos = new QGroupBox("Quantidade de Ingressos", this);
     QVBoxLayout* layIngressos = new QVBoxLayout(grpIngressos);
 
-    // Ingressos Inteira
     QHBoxLayout* layoutInteira = new QHBoxLayout();
     QLabel* lblInteira = new QLabel("Ingresso Inteira", this);
     lblInteira->setStyleSheet("font-weight: normal; font-size: 16px;");
@@ -89,8 +79,6 @@ Tela1SelecaoFilmeWidget::Tela1SelecaoFilmeWidget(RepositorioGenerico<Filme>& fil
     layoutInteira->addWidget(btnMaisInteira);
     layIngressos->addLayout(layoutInteira);
 
-    // Ingressos Meia-Entrada
-   
     btnMenosMeia = new QPushButton("-", this);
     btnMenosMeia->setFixedSize(35, 30);
     btnMenosMeia->setStyleSheet("background-color: #D32222; color: white; font-weight: bold;");
@@ -118,7 +106,6 @@ Tela1SelecaoFilmeWidget::Tela1SelecaoFilmeWidget(RepositorioGenerico<Filme>& fil
     colunasLayout->addLayout(colunaDireitaLayout, 1);
     mainLayout->addLayout(colunasLayout, 4);
 
-    // Botão de Prosseguir com Destaque Vermelho (#D32222)
     btnProsseguir = new QPushButton("Prosseguir para Escolha de Assentos", this);
     btnProsseguir->setObjectName("btnProsseguir");
     btnProsseguir->setMinimumHeight(45);
@@ -128,7 +115,6 @@ Tela1SelecaoFilmeWidget::Tela1SelecaoFilmeWidget(RepositorioGenerico<Filme>& fil
 
     reconstruirCardsFilmes();
 
-    // Conexões de eventos dos botões tipo bomboniere (feitas apenas uma vez no construtor)
     connect(listaSessoes, &QListWidget::currentRowChanged, this, &Tela1SelecaoFilmeWidget::onSessaoSelecionada);
     
     connect(btnMaisInteira, &QPushButton::clicked, this, [this]() {
@@ -193,9 +179,9 @@ void Tela1SelecaoFilmeWidget::reconstruirCardsFilmes() {
         btnCard->setCursor(Qt::PointingHandCursor);
         
         QString textoBtn = QString("🎬\n\n%1\n\n%2\n%3 min")
-                               .arg(QString::fromStdString(filme.getTitulo()))
-                               .arg(QString::fromStdString(filme.getGenero()))
-                               .arg(filme.getDuracao());
+                                .arg(QString::fromStdString(filme.getTitulo()))
+                                .arg(QString::fromStdString(filme.getGenero()))
+                                .arg(filme.getDuracao());
         btnCard->setText(textoBtn);
 
         QString estiloCard = "QPushButton { background-color: #3d4d52; border: 2px solid #181c25; border-radius: 10px; font-size: 16px; font-weight: normal; color: #fbfef9; text-align: center; }"
@@ -255,10 +241,10 @@ void Tela1SelecaoFilmeWidget::onFilmeCardClicado(int indexFilme) {
 
     const Filme& filme = repoFilmes.obter(static_cast<size_t>(indexFilme));
     lblDetalhesFilme->setText(QString("Filme: %1 | Gênero: %2 | Duração: %3 min | Classificação: %4 anos")
-                                  .arg(QString::fromStdString(filme.getTitulo()))
-                                  .arg(QString::fromStdString(filme.getGenero()))
-                                  .arg(filme.getDuracao())
-                                  .arg(filme.getClassificacao()));
+                                .arg(QString::fromStdString(filme.getTitulo()))
+                                .arg(QString::fromStdString(filme.getGenero()))
+                                .arg(filme.getDuracao())
+                                .arg(filme.getClassificacao()));
 
     for (size_t i = 0; i < repoSessoes.tamanho(); ++i) {
         const Sessao& s = repoSessoes.obter(i);

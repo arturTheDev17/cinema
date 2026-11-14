@@ -39,13 +39,11 @@ Tela3BomboniereWidget::Tela3BomboniereWidget(RepositorioGenerico<ItemBomboniere>
     layCombos->addWidget(btnComboSolo);
     catalogoLayout->addWidget(grpCombos);
 
-    // Inicializa a área de rolagem dos produtos
     scrollArea = new QScrollArea(this);
     scrollArea->setWidgetResizable(true);
     scrollArea->setStyleSheet("background: transparent; border: none;");
     catalogoLayout->addWidget(scrollArea, 1);
 
-    // Botões de navegação inferiores
     QHBoxLayout* navLayout = new QHBoxLayout();
     btnVoltar = new QPushButton("Voltar para Assentos", this);
     btnVoltar->setMinimumHeight(45);
@@ -68,11 +66,9 @@ Tela3BomboniereWidget::Tela3BomboniereWidget(RepositorioGenerico<ItemBomboniere>
     connect(btnVoltar, &QPushButton::clicked, this, &Tela3BomboniereWidget::voltarParaAssentos);
     connect(btnAvancar, &QPushButton::clicked, this, &Tela3BomboniereWidget::avancarParaPagamento);
 
-    // Constrói o catálogo pela primeira vez
     reconstruirCatalogo();
 }
 
-// Garante que toda vez que a tela for exibida (inclusive ao navegar por ela), o catálogo e os itens do admin são sincronizados
 void Tela3BomboniereWidget::showEvent(QShowEvent* event) {
     QWidget::showEvent(event);
     atualizarTela();
@@ -95,8 +91,6 @@ void Tela3BomboniereWidget::reconstruirCatalogo() {
         QFrame* card = new QFrame(this);
         card->setFrameShape(QFrame::StyledPanel);
         card->setStyleSheet("background-color: #3d4d52; border-radius: 8px; border: 1px solid #181c25;");
-        
-        // CORREÇÃO: Altura e largura fixa para padronizar todos os cards perfeitamente
         card->setFixedSize(210, 245);
 
         QVBoxLayout* cardLayout = new QVBoxLayout(card);

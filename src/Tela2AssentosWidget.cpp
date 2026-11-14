@@ -8,31 +8,28 @@ Tela2AssentosWidget::Tela2AssentosWidget(Carrinho& carrinho, QWidget* parent)
     : QWidget(parent), carrinho(carrinho) {
 
     QHBoxLayout* mainLayout = new QHBoxLayout(this);
-
     QVBoxLayout* areaSalaLayout = new QVBoxLayout();
-    
-    
+
     QLabel* lblTelaCinema = new QLabel("TELA DO CINEMA", this);
     lblTelaCinema->setAlignment(Qt::AlignCenter);
     lblTelaCinema->setStyleSheet("background-color: #fbfef9; color: #181c25; font-weight: bold; font-size: 14px; padding: 10px; border-radius: 6px; margin: 5px");
     areaSalaLayout->addWidget(lblTelaCinema);
-    
+
     QWidget* containerGrade = new QWidget(this);
     gridAssentos = new QGridLayout(containerGrade);
     gridAssentos->setSpacing(8);
     areaSalaLayout->addWidget(containerGrade, 1);
-    
+
     lblInstrucao = new QLabel("Selecione os assentos", this);
     lblInstrucao->setStyleSheet("font-size: 14px; font-weight: normal; color: #dec402; margin-bottom: 6px;");
     areaSalaLayout->addWidget(lblInstrucao);
 
     QHBoxLayout* botoesNavLayout = new QHBoxLayout();
-    
+
     btnVoltar = new QPushButton("Voltar", this);
     btnVoltar->setMinimumHeight(45);
     btnVoltar->setCursor(Qt::PointingHandCursor);
-    // Botão Voltar neutro/padrão herdando do QSS global
-    
+
     btnAvancar = new QPushButton("Prosseguir para Bomboniere", this);
     btnAvancar->setObjectName("btnAvancarAssentos");
     btnAvancar->setMinimumHeight(45);
@@ -88,13 +85,11 @@ void Tela2AssentosWidget::reconstruirGrade() {
             btn->setCursor(Qt::PointingHandCursor);
 
             if (assento.getStatus() == SituacaoAssento::OCUPADO) {
-                // Assento Ocupado: Cinza neutro desativado
                 btn->setStyleSheet("background-color: #2b353b; color: #777777; border: 1px solid #3d4d52; border-radius: 4px; font-weight: bold;");
                 btn->setEnabled(false);
                 btn->setCursor(Qt::ForbiddenCursor);
             } else {
-                // Assento Livre: Utilizando o verde de sucesso (#7FBB3A) da paleta
-                btn->setStyleSheet("background-color: #7FBB3A; color: #181c25;  border-radius: 4px; font-weight: bold;");
+                btn->setStyleSheet("background-color: #7FBB3A; color: #181c25; border-radius: 4px; font-weight: bold;");
             }
 
             connect(btn, &QPushButton::clicked, this, [this, f, c]() {
@@ -119,7 +114,7 @@ void Tela2AssentosWidget::onAssentoClicado(int fileira, int coluna) {
         if (static_cast<int>(assentosSelecionados.size()) < limiteIngressos) {
             assento.reservar();
             assentosSelecionados.push_back(&assento);
-            btn->setStyleSheet("background-color: #D32222; color: #fbfef9;  border-radius: 4px; font-weight: bold;");
+            btn->setStyleSheet("background-color: #D32222; color: #fbfef9; border-radius: 4px; font-weight: bold;");
         }
     } else if (assento.getStatus() == SituacaoAssento::RESERVADO) {
         assento.liberar();
@@ -127,8 +122,7 @@ void Tela2AssentosWidget::onAssentoClicado(int fileira, int coluna) {
         if (it != assentosSelecionados.end()) {
             assentosSelecionados.erase(it);
         }
-        // Retorna para o verde livre (#7FBB3A)
-        btn->setStyleSheet("background-color: #7FBB3A; color: #181c25;  border-radius: 4px; font-weight: bold;");
+        btn->setStyleSheet("background-color: #7FBB3A; color: #181c25; border-radius: 4px; font-weight: bold;");
     }
 
     atualizarEstadoBotoes();

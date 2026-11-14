@@ -23,7 +23,6 @@ Tela4PagamentoWidget::Tela4PagamentoWidget(Carrinho& carrinho, QWidget* parent)
     comboFormaPagamento = new QComboBox(this);
     comboFormaPagamento->addItems({"Cartao de Credito", "Cartao de Debito", "PIX"});
     comboFormaPagamento->setMinimumHeight(42);
-    // QComboBox moderno com fundo cinza escuro, borda sutil, texto claro e itens estilizados na lista suspensa
     comboFormaPagamento->setStyleSheet(
         "QComboBox {"
         "   background-color: #3d4d52;"
@@ -57,7 +56,6 @@ Tela4PagamentoWidget::Tela4PagamentoWidget(Carrinho& carrinho, QWidget* parent)
     layMetodo->addWidget(comboFormaPagamento);
     pagLayout->addWidget(grpMetodo);
 
-    // Valor Total a Pagar utilizando o verde de sucesso (#7FBB3A) do projeto com excelente contraste
     lblValorDestaque = new QLabel("Total a Pagar: R$ 0,00", this);
     lblValorDestaque->setStyleSheet("font-size: 22px; font-weight: bold; color: #7FBB3A; padding: 15px 0; background: transparent;");
     lblValorDestaque->setAlignment(Qt::AlignCenter);
