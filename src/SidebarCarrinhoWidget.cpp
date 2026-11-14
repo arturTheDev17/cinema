@@ -4,6 +4,7 @@
 
 SidebarCarrinhoWidget::SidebarCarrinhoWidget(QWidget* parent) : QWidget(parent) {
     setMinimumWidth(300);
+    
     QVBoxLayout* layout = new QVBoxLayout(this);
     layout->setSpacing(12);
 
@@ -15,13 +16,15 @@ SidebarCarrinhoWidget::SidebarCarrinhoWidget(QWidget* parent) : QWidget(parent) 
     lblTitulo->setAlignment(Qt::AlignCenter);
     lblTitulo->setStyleSheet("color: #dec402; background: transparent; border: none;");
 
+    QString estiloCaixaInterna = "color: #fbfef9; font-size: 14px; background: transparent; padding: 16px; border: 1px solid #3d4d52; border-radius: 3px;";
+
     lblInfoSessao = new QLabel("Nenhuma sessao selecionada", this);
     lblInfoSessao->setWordWrap(true);
-    lblInfoSessao->setStyleSheet("color: #fbfef9; font-size: 14px; background: transparent; padding: 16px; border: 1px solid #3d4d52; border-radius: 3px;");
-    listaItens = new QListWidget(this);
-    listaItens->setStyleSheet("color: #fbfef9; font-size: 14px; background: transparent; padding: 16px; border: 1px solid #3d4d52; border-radius: 3px;");
+    lblInfoSessao->setStyleSheet(estiloCaixaInterna);
 
-    
+    listaItens = new QListWidget(this);
+    listaItens->setStyleSheet(estiloCaixaInterna);
+
     lblCombosAplicados = new QLabel("", this);
     lblCombosAplicados->setWordWrap(true);
     lblCombosAplicados->setStyleSheet("color: #7FBB3A; font-weight: bold; font-size: 14px; background: transparent; border: none; padding: 16px; border: 1px solid #3d4d52; border-radius: 3px;");
@@ -40,8 +43,7 @@ SidebarCarrinhoWidget::SidebarCarrinhoWidget(QWidget* parent) : QWidget(parent) 
 void SidebarCarrinhoWidget::atualizar(const Carrinho& carrinho, bool mostrarBomboniere) {
     listaItens->clear();
 
-    Sessao* sessao = carrinho.getSessao();
-    if (sessao != nullptr) {
+    if (Sessao* sessao = carrinho.getSessao()) {
         QString info = QString("Filme: %1\n%2")
                            .arg(QString::fromStdString(sessao->getFilme().getTitulo()))
                            .arg(QString::fromStdString(sessao->getDescricaoCompleta()));
@@ -51,23 +53,22 @@ void SidebarCarrinhoWidget::atualizar(const Carrinho& carrinho, bool mostrarBomb
     }
 
     for (const auto& ing : carrinho.getIngressos()) {
-        QString linha = QString("%1 - R$ %2")
-                            .arg(QString::fromStdString(ing->getDescricao()))
-                            .arg(ing->calcularPreco(), 0, 'f', 2);
-        listaItens->addItem(linha);
+        listaItens->addItem(QString("%1 - R$ %2")
+                                .arg(QString::fromStdString(ing->getDescricao()))
+                                .arg(ing->calcularPreco(), 0, 'f', 2));
     }
 
     if (mostrarBomboniere) {
         for (const auto& item : carrinho.getItensBomboniere()) {
-            QString linha = QString("%1 - R$ %2")
-                                .arg(QString::fromStdString(item.getNome()))
-                                .arg(item.getPreco(), 0, 'f', 2);
-            listaItens->addItem(linha);
+            listaItens->addItem(QString("%1 - R$ %2")
+                                    .arg(QString::fromStdString(item.getNome()))
+                                    .arg(item.getPreco(), 0, 'f', 2));
         }
     }
 
     std::vector<std::string> combos;
     double desconto = carrinho.calcularDescontoCombos(combos);
+    
     if (mostrarBomboniere && !combos.empty()) {
         QString txtCombos = "Combos aplicados:\n";
         for (const auto& c : combos) {
@@ -87,9 +88,9 @@ void SidebarCarrinhoWidget::atualizar(const Carrinho& carrinho, bool mostrarBomb
 void SidebarCarrinhoWidget::definirModoExpandido(bool expandido) {
     if (expandido) {
         setMaximumWidth(QWIDGETSIZE_MAX);
-        lblTotal->setVisible(false);
+        lblTotal->hide();
     } else {
         setMaximumWidth(365);
-        lblTotal->setVisible(true);
+        lblTotal->show();
     }
 }
