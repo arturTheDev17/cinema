@@ -3,6 +3,8 @@ colocar modo de adicionar sessao (listar filmes que existem com seus ids para fa
 conferir se o CRUD tá top
 conferir classes
 
+remover ingressos vip
+
  para estruturar melhor minhas pastas, preciso fazer ajustes
 
 include/
