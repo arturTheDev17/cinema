@@ -1,0 +1,22 @@
+colocar tela inicial que permita começar diireto da bomboniere, sem ter sessao de filme. fazer bem certinho
+colocar modo de adicionar sessao (listar filmes que existem com seus ids para facilitar criacao)
+conferir se o CRUD tá top
+conferir classes
+
+ para estruturar melhor minhas pastas, preciso fazer ajustes
+
+include/
+
+    visual/
+    classes/ 
+
+src/
+
+    assets/
+    visual/
+    classes/ 
+
+
+e o Cmake fora
+
+O uso de bibliotecas é permitido, desde que o código final seja entregue juntamente com todas as suas dependências e executável em diferentes plataformas (não são permitidas bibliotecas específicas do sistema operacional). Recomenda-se compilar o código fonte das bibliotecas externas juntamente com seu projeto.

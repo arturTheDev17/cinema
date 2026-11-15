@@ -1,102 +1,37 @@
 # ninja log v6
-1152	2633	8163732360983523	CMakeFiles/CinemaAutoatendimento.dir/src/Carrinho.cpp.obj	a7f0c92c620b0326
-30	173	8161423795523538	CineManager_autogen/timestamp	1a945a105245998b
+30	173	8161423795523538	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CineManager_autogen/timestamp	1a945a105245998b
 800	1142	8163732360843522	CinemaAutoatendimento_autogen/UVLADIE3JM/qrc_recursos.cpp	4d64c433526ba354
 30	173	8161423795523538	CineManager_autogen/mocs_compilation.cpp	1a945a105245998b
-30	173	8161423795523538	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CineManager_autogen/timestamp	1a945a105245998b
+1152	2633	8163732360983523	CMakeFiles/CinemaAutoatendimento.dir/src/Carrinho.cpp.obj	a7f0c92c620b0326
+30	173	8161423795523538	CineManager_autogen/timestamp	1a945a105245998b
 30	173	8161423795523538	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CineManager_autogen/mocs_compilation.cpp	1a945a105245998b
 1147	1786	8163732360943514	CMakeFiles/CinemaAutoatendimento.dir/src/Assento.cpp.obj	655fadf6814f2879
 1183	1937	8163732361303538	CMakeFiles/CinemaAutoatendimento.dir/src/Sessao.cpp.obj	ad08e9c485a474c2
-19	159	8163926921043948	CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-19	159	8163926921043948	CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-1161	1812	8163732361083521	CMakeFiles/CinemaAutoatendimento.dir/src/Ingresso.cpp.obj	674e91b4225fc02d
-19	159	8163926921043948	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-19	159	8163926921043948	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-800	1142	8163732360843522	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/UVLADIE3JM/qrc_recursos.cpp	4d64c433526ba354
-1166	1818	8163732361133524	CMakeFiles/CinemaAutoatendimento.dir/src/ItemBomboniere.cpp.obj	d20580d7c469f7d
-2425	3153	8163926945107402	CinemaAutoatendimento.exe	776d9bfe165466bc
-1156	1743	8163732361033525	CMakeFiles/CinemaAutoatendimento.dir/src/Filme.cpp.obj	cb89bd061ed94145
-1177	1993	8163732361243546	CMakeFiles/CinemaAutoatendimento.dir/src/Sala.cpp.obj	9924eb2377f1b4d0
-1224	4930	8163732361713526	CMakeFiles/CinemaAutoatendimento.dir/src/main.cpp.obj	4d25951cbbc96571
-1232	1603	8163732361793528	CMakeFiles/CinemaAutoatendimento.dir/CinemaAutoatendimento_autogen/UVLADIE3JM/qrc_recursos.cpp.obj	978a63706d84b4ee
-174	2426	8163922873099216	CMakeFiles/CinemaAutoatendimento.dir/src/SidebarCarrinhoWidget.cpp.obj	961b03ff07189349
-159	2425	8163926922443928	CMakeFiles/CinemaAutoatendimento.dir/src/Tela3BomboniereWidget.cpp.obj	c1f8c81605a8f5c2
-1217	4832	8163732361643545	CMakeFiles/CinemaAutoatendimento.dir/src/Tela4PagamentoWidget.cpp.obj	4033fb793cac2fdb
-1195	5258	8163732361423538	CMakeFiles/CinemaAutoatendimento.dir/src/Tela1SelecaoFilmeWidget.cpp.obj	d6fa8b3569d4d4
-158	4042	8163748768889411	CMakeFiles/CinemaAutoatendimento.dir/src/MainWindow.cpp.obj	9cca9e80cde2bea0
-691	9754	8163921856003034	CMakeFiles/CinemaAutoatendimento.dir/src/Tela2AssentosWidget.cpp.obj	300c222a195fa42
-1142	5660	8163732360893517	CMakeFiles/CinemaAutoatendimento.dir/CinemaAutoatendimento_autogen/mocs_compilation.cpp.obj	5ed2142a7d79090
-20	159	8163927367813339	CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-20	159	8163927367813339	CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-20	159	8163927367813339	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-20	159	8163927367813339	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-160	8269	8163927369213357	CMakeFiles/CinemaAutoatendimento.dir/src/MainWindow.cpp.obj	9cca9e80cde2bea0
-8269	9263	8163927450307836	CinemaAutoatendimento.exe	776d9bfe165466bc
-18	1823	8163929323324348	CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-18	1823	8163929323324348	CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-18	1823	8163929323324348	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-18	1823	8163929323324348	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-1840	4950	8163929324212310	CMakeFiles/CinemaAutoatendimento.dir/src/Tela4PagamentoWidget.cpp.obj	4033fb793cac2fdb
-1835	5026	8163929324162315	CMakeFiles/CinemaAutoatendimento.dir/src/Tela3BomboniereWidget.cpp.obj	c1f8c81605a8f5c2
-1845	5133	8163929324262315	CMakeFiles/CinemaAutoatendimento.dir/src/main.cpp.obj	4d25951cbbc96571
-1825	5835	8163929324061904	CMakeFiles/CinemaAutoatendimento.dir/CinemaAutoatendimento_autogen/mocs_compilation.cpp.obj	5ed2142a7d79090
-1830	6748	8163929324122310	CMakeFiles/CinemaAutoatendimento.dir/src/MainWindow.cpp.obj	9cca9e80cde2bea0
-6748	7908	8163929373290965	CinemaAutoatendimento.exe	776d9bfe165466bc
-18	160	8163930297895720	CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-18	160	8163930297895720	CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-18	160	8163930297895720	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-18	160	8163930297895720	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-166	2628	8163930299375085	CMakeFiles/CinemaAutoatendimento.dir/src/Tela3BomboniereWidget.cpp.obj	c1f8c81605a8f5c2
-21	161	8163930423672505	CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-21	161	8163930423672505	CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-21	161	8163930423672505	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-21	161	8163930423672505	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-162	4231	8163930425082725	CMakeFiles/CinemaAutoatendimento.dir/src/MainWindow.cpp.obj	9cca9e80cde2bea0
-4231	5051	8163930465766909	CinemaAutoatendimento.exe	776d9bfe165466bc
-22	164	8163931504299328	CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-22	164	8163931504299328	CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-22	164	8163931504299328	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-22	164	8163931504299328	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-164	2414	8163931505731792	CMakeFiles/CinemaAutoatendimento.dir/src/Tela3BomboniereWidget.cpp.obj	c1f8c81605a8f5c2
-2414	3161	8163931528223729	CinemaAutoatendimento.exe	776d9bfe165466bc
-21	538	8163935142090058	CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-21	538	8163935142090058	CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-21	538	8163935142090058	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-21	538	8163935142090058	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-549	3193	8163935142950693	CMakeFiles/CinemaAutoatendimento.dir/src/Tela3BomboniereWidget.cpp.obj	c1f8c81605a8f5c2
-555	3201	8163935143000702	CMakeFiles/CinemaAutoatendimento.dir/src/main.cpp.obj	4d25951cbbc96571
-539	3673	8163935142850699	CMakeFiles/CinemaAutoatendimento.dir/CinemaAutoatendimento_autogen/mocs_compilation.cpp.obj	5ed2142a7d79090
-545	4826	8163935142900696	CMakeFiles/CinemaAutoatendimento.dir/src/MainWindow.cpp.obj	9cca9e80cde2bea0
-4826	5574	8163935185714899	CinemaAutoatendimento.exe	776d9bfe165466bc
-17	151	8163937574708535	CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-17	151	8163937574708535	CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-17	151	8163937574708535	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-17	151	8163937574708535	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-152	4474	8163937576049583	CMakeFiles/CinemaAutoatendimento.dir/src/MainWindow.cpp.obj	9cca9e80cde2bea0
-4474	5275	8163937619277151	CinemaAutoatendimento.exe	776d9bfe165466bc
-20	165	8163941059169749	CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-20	165	8163941059169749	CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-20	165	8163941059169749	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-20	165	8163941059169749	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-171	4946	8163941060679764	CMakeFiles/CinemaAutoatendimento.dir/src/Tela4PagamentoWidget.cpp.obj	4033fb793cac2fdb
-165	4946	8163941060619767	CMakeFiles/CinemaAutoatendimento.dir/src/SidebarCarrinhoWidget.cpp.obj	961b03ff07189349
-4946	7053	8163941108423067	CinemaAutoatendimento.exe	776d9bfe165466bc
-19	161	8163941593549853	CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-19	161	8163941593549853	CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-19	161	8163941593549853	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-19	161	8163941593549853	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-162	2599	8163941594969862	CMakeFiles/CinemaAutoatendimento.dir/src/SidebarCarrinhoWidget.cpp.obj	961b03ff07189349
-2600	3337	8163941619345961	CinemaAutoatendimento.exe	776d9bfe165466bc
-19	154	8163942093240785	CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-19	154	8163942093240785	CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-19	154	8163942093240785	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-19	154	8163942093240785	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-155	2288	8163942094606103	CMakeFiles/CinemaAutoatendimento.dir/src/SidebarCarrinhoWidget.cpp.obj	961b03ff07189349
-2288	3023	8163942115938192	CinemaAutoatendimento.exe	776d9bfe165466bc
 9	145	8163949040680017	CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
+1161	1812	8163732361083521	CMakeFiles/CinemaAutoatendimento.dir/src/Ingresso.cpp.obj	674e91b4225fc02d
 9	145	8163949040680017	CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
 9	145	8163949040680017	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
+800	1142	8163732360843522	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/UVLADIE3JM/qrc_recursos.cpp	4d64c433526ba354
 9	145	8163949040680017	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
+2804	3777	8163949068633941	CinemaAutoatendimento.exe	776d9bfe165466bc
+1166	1818	8163732361133524	CMakeFiles/CinemaAutoatendimento.dir/src/ItemBomboniere.cpp.obj	d20580d7c469f7d
+1156	1743	8163732361033525	CMakeFiles/CinemaAutoatendimento.dir/src/Filme.cpp.obj	cb89bd061ed94145
+1177	1993	8163732361243546	CMakeFiles/CinemaAutoatendimento.dir/src/Sala.cpp.obj	9924eb2377f1b4d0
+1232	1603	8163732361793528	CMakeFiles/CinemaAutoatendimento.dir/CinemaAutoatendimento_autogen/UVLADIE3JM/qrc_recursos.cpp.obj	978a63706d84b4ee
+555	3201	8163935143000702	CMakeFiles/CinemaAutoatendimento.dir/src/main.cpp.obj	4d25951cbbc96571
+549	3193	8163935142950693	CMakeFiles/CinemaAutoatendimento.dir/src/Tela3BomboniereWidget.cpp.obj	c1f8c81605a8f5c2
 146	2385	8163949042060015	CMakeFiles/CinemaAutoatendimento.dir/src/SidebarCarrinhoWidget.cpp.obj	961b03ff07189349
 151	2804	8163949042110024	CMakeFiles/CinemaAutoatendimento.dir/src/Tela4PagamentoWidget.cpp.obj	4033fb793cac2fdb
-2804	3777	8163949068633941	CinemaAutoatendimento.exe	776d9bfe165466bc
+152	4474	8163937576049583	CMakeFiles/CinemaAutoatendimento.dir/src/MainWindow.cpp.obj	9cca9e80cde2bea0
+1195	5258	8163732361423538	CMakeFiles/CinemaAutoatendimento.dir/src/Tela1SelecaoFilmeWidget.cpp.obj	d6fa8b3569d4d4
+691	9754	8163921856003034	CMakeFiles/CinemaAutoatendimento.dir/src/Tela2AssentosWidget.cpp.obj	300c222a195fa42
+539	3673	8163935142850699	CMakeFiles/CinemaAutoatendimento.dir/CinemaAutoatendimento_autogen/mocs_compilation.cpp.obj	5ed2142a7d79090
+2683	4016	8164048943084353	CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
+2683	4016	8164048943084353	CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
+2683	4016	8164048943084353	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
+2683	4016	8164048943084353	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
+4145	30730	8164048957705700	CMakeFiles/CinemaAutoatendimento.dir/src/Tela4PagamentoWidget.cpp.obj	4033fb793cac2fdb
+4117	30731	8164048957425740	CMakeFiles/CinemaAutoatendimento.dir/src/Tela1SelecaoFilmeWidget.cpp.obj	d6fa8b3569d4d4
+4139	30732	8164048957655711	CMakeFiles/CinemaAutoatendimento.dir/src/Tela3BomboniereWidget.cpp.obj	c1f8c81605a8f5c2
+4134	30732	8164048957595710	CMakeFiles/CinemaAutoatendimento.dir/src/Tela2AssentosWidget.cpp.obj	300c222a195fa42
+4017	38901	8164048956435747	CMakeFiles/CinemaAutoatendimento.dir/src/MainWindow.cpp.obj	9cca9e80cde2bea0
