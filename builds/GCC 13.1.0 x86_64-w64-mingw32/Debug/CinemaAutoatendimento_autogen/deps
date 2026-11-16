@@ -4,35 +4,37 @@ CinemaAutoatendimento_autogen/timestamp: \
 	C:/Users/artur/Desktop/cinema/builds/GCC\ 13.1.0\ x86_64-w64-mingw32/Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \
 	C:/Users/artur/Desktop/cinema/builds/GCC\ 13.1.0\ x86_64-w64-mingw32/Debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
 	C:/Users/artur/Desktop/cinema/builds/GCC\ 13.1.0\ x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/moc_predefs.h \
-	C:/Users/artur/Desktop/cinema/include/Assento.h \
-	C:/Users/artur/Desktop/cinema/include/Carrinho.h \
-	C:/Users/artur/Desktop/cinema/include/Filme.h \
-	C:/Users/artur/Desktop/cinema/include/Ingresso.h \
-	C:/Users/artur/Desktop/cinema/include/ItemBomboniere.h \
-	C:/Users/artur/Desktop/cinema/include/MainWindow.h \
-	C:/Users/artur/Desktop/cinema/include/RepositorioGenerico.h \
-	C:/Users/artur/Desktop/cinema/include/Sala.h \
-	C:/Users/artur/Desktop/cinema/include/Sessao.h \
-	C:/Users/artur/Desktop/cinema/include/SidebarCarrinhoWidget.h \
-	C:/Users/artur/Desktop/cinema/include/Tela1SelecaoFilmeWidget.h \
-	C:/Users/artur/Desktop/cinema/include/Tela2AssentosWidget.h \
-	C:/Users/artur/Desktop/cinema/include/Tela3BomboniereWidget.h \
-	C:/Users/artur/Desktop/cinema/include/Tela4PagamentoWidget.h \
-	C:/Users/artur/Desktop/cinema/src/Assento.cpp \
-	C:/Users/artur/Desktop/cinema/src/Carrinho.cpp \
-	C:/Users/artur/Desktop/cinema/src/Filme.cpp \
-	C:/Users/artur/Desktop/cinema/src/Ingresso.cpp \
-	C:/Users/artur/Desktop/cinema/src/ItemBomboniere.cpp \
-	C:/Users/artur/Desktop/cinema/src/MainWindow.cpp \
-	C:/Users/artur/Desktop/cinema/src/Sala.cpp \
-	C:/Users/artur/Desktop/cinema/src/Sessao.cpp \
-	C:/Users/artur/Desktop/cinema/src/SidebarCarrinhoWidget.cpp \
-	C:/Users/artur/Desktop/cinema/src/Tela1SelecaoFilmeWidget.cpp \
-	C:/Users/artur/Desktop/cinema/src/Tela2AssentosWidget.cpp \
-	C:/Users/artur/Desktop/cinema/src/Tela3BomboniereWidget.cpp \
-	C:/Users/artur/Desktop/cinema/src/Tela4PagamentoWidget.cpp \
-	C:/Users/artur/Desktop/cinema/src/main.cpp \
+	C:/Users/artur/Desktop/cinema/include/classes/Assento.h \
+	C:/Users/artur/Desktop/cinema/include/classes/Carrinho.h \
+	C:/Users/artur/Desktop/cinema/include/classes/Filme.h \
+	C:/Users/artur/Desktop/cinema/include/classes/Ingresso.h \
+	C:/Users/artur/Desktop/cinema/include/classes/ItemBomboniere.h \
+	C:/Users/artur/Desktop/cinema/include/classes/RepositorioGenerico.h \
+	C:/Users/artur/Desktop/cinema/include/classes/Sala.h \
+	C:/Users/artur/Desktop/cinema/include/classes/Sessao.h \
+	C:/Users/artur/Desktop/cinema/include/visual/MainWindow.h \
+	C:/Users/artur/Desktop/cinema/include/visual/SidebarCarrinhoWidget.h \
+	C:/Users/artur/Desktop/cinema/include/visual/Tela1SelecaoFilmeWidget.h \
+	C:/Users/artur/Desktop/cinema/include/visual/Tela2AssentosWidget.h \
+	C:/Users/artur/Desktop/cinema/include/visual/Tela3BomboniereWidget.h \
+	C:/Users/artur/Desktop/cinema/include/visual/Tela4PagamentoWidget.h \
+	C:/Users/artur/Desktop/cinema/include/visual/TelaInicialWidget.h \
+	C:/Users/artur/Desktop/cinema/src/classes/Assento.cpp \
+	C:/Users/artur/Desktop/cinema/src/classes/Carrinho.cpp \
+	C:/Users/artur/Desktop/cinema/src/classes/Filme.cpp \
+	C:/Users/artur/Desktop/cinema/src/classes/Ingresso.cpp \
+	C:/Users/artur/Desktop/cinema/src/classes/ItemBomboniere.cpp \
+	C:/Users/artur/Desktop/cinema/src/classes/Sala.cpp \
+	C:/Users/artur/Desktop/cinema/src/classes/Sessao.cpp \
+	C:/Users/artur/Desktop/cinema/src/classes/main.cpp \
 	C:/Users/artur/Desktop/cinema/src/recursos.qrc \
+	C:/Users/artur/Desktop/cinema/src/visual/MainWindow.cpp \
+	C:/Users/artur/Desktop/cinema/src/visual/SidebarCarrinhoWidget.cpp \
+	C:/Users/artur/Desktop/cinema/src/visual/Tela1SelecaoFilmeWidget.cpp \
+	C:/Users/artur/Desktop/cinema/src/visual/Tela2AssentosWidget.cpp \
+	C:/Users/artur/Desktop/cinema/src/visual/Tela3BomboniereWidget.cpp \
+	C:/Users/artur/Desktop/cinema/src/visual/Tela4PagamentoWidget.cpp \
+	C:/Users/artur/Desktop/cinema/src/visual/TelaInicialWidget.cpp \
 	F:/qt/6.12.0/mingw_64/include/QtCore/QList \
 	F:/qt/6.12.0/mingw_64/include/QtCore/QObject \
 	F:/qt/6.12.0/mingw_64/include/QtCore/QRect \
@@ -443,94 +445,33 @@ CinemaAutoatendimento_autogen/timestamp: \
 	F:/qt/6.12.0/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
 	F:/qt/6.12.0/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargetsPrecheck.cmake \
 	F:/qt/6.12.0/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCXXCompiler.cmake.in \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCompilerIdDetection.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerSupport.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineRCCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindBinUtils.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeNinjaFindMake.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeParseImplicitIncludeInfo.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeParseImplicitLinkInfo.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeParseLibraryArchitecture.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeRCCompiler.cmake.in \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeRCInformation.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeSystem.cmake.in \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeTestCompilerCommon.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeTestRCCompiler.cmake \
+	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CPack.cmake \
+	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CPackComponent.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFileCXX.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckLibraryExists.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/ADSP-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/Borland-DetermineCompiler.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/Clang-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/Cray-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/GHS-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/GNU-FindBinUtils.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/GNU.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/IAR-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/Intel-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/MSVC-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/PGI-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/PathScale-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/SCO-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/TI-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/TIClang-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/Tasking-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/Watcom-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/FindThreads.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/FindVulkan.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/GNUInstallDirs.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CheckFlagCommonConfig.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Internal/FeatureTesting.cmake \
-	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-Determine-CXX.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX-ABI.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake \
@@ -538,6 +479,7 @@ CinemaAutoatendimento_autogen/timestamp: \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows.cmake \
 	F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake \
+	F:/qt/Tools/CMake_64/share/cmake-3.30/Templates/CPackConfig.cmake.in \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/array \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/atomic \
@@ -560,6 +502,7 @@ CinemaAutoatendimento_autogen/timestamp: \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cpp_type_traits.h \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxabi_forced.h \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxabi_init_exception.h \
+	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/deque.tcc \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/enable_special_members.h \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/exception.h \
@@ -600,6 +543,7 @@ CinemaAutoatendimento_autogen/timestamp: \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algobase.h \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_construct.h \
+	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_deque.h \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_function.h \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_heap.h \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_iterator.h \
@@ -648,6 +592,7 @@ CinemaAutoatendimento_autogen/timestamp: \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwchar \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/assertions.h \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/debug.h \
+	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/deque \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/exception \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/aligned_buffer.h \
 	F:/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/alloc_traits.h \

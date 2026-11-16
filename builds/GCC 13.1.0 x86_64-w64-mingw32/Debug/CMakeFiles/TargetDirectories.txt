@@ -1,5 +1,11 @@
 C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CMakeFiles/CinemaAutoatendimento.dir
+C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CMakeFiles/package.dir
+C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CMakeFiles/package_source.dir
 C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CMakeFiles/edit_cache.dir
 C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CMakeFiles/list_install_components.dir
+C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CMakeFiles/install.dir
+C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CMakeFiles/install/local.dir
+C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CMakeFiles/install/strip.dir
 C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CMakeFiles/CinemaAutoatendimento_autogen_timestamp_deps.dir
 C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CMakeFiles/CinemaAutoatendimento_autogen.dir

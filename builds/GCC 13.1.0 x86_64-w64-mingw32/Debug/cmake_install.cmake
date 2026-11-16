@@ -37,6 +37,20 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "F:/qt/Tools/mingw1310_64/bin/objdump.exe")
 endif()
 
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE EXECUTABLE FILES "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento.exe")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./CinemaAutoatendimento.exe" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./CinemaAutoatendimento.exe")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "F:/qt/Tools/mingw1310_64/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./CinemaAutoatendimento.exe")
+    endif()
+  endif()
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE DIRECTORY FILES "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/" REGEX "/[^/]*\\.pdb$" EXCLUDE REGEX "/[^/]*\\.ilk$" EXCLUDE REGEX "/[^/]*\\.exp$" EXCLUDE REGEX "/[^/]*\\.lib$" EXCLUDE)
+endif()
+
 if(CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_COMPONENT MATCHES "^[a-zA-Z0-9_.+-]+$")
     set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
