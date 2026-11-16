@@ -5,6 +5,8 @@ colocar modo de adicionar sessao (listar filmes que existem com seus ids para fa
 conferir se o CRUD tá top
 conferir classes
 
+remover ingressos vip
+
  para estruturar melhor minhas pastas, preciso fazer ajustes
 
 include/
@@ -21,9 +23,13 @@ src/
 
 e o Cmake fora
 
+<<<<<<< HEAD
 O uso de bibliotecas é permitido, 
 desde que o código final seja entregue juntamente com todas as suas dependências e 
 executável em diferentes plataformas (não são permitidas bibliotecas específicas do 
 sistema operacional). 
 Recomenda-se compilar o código fonte das bibliotecas externas 
 juntamente com seu projeto.
+=======
+O uso de bibliotecas é permitido, desde que o código final seja entregue juntamente com todas as suas dependências e executável em diferentes plataformas (não são permitidas bibliotecas específicas do sistema operacional). Recomenda-se compilar o código fonte das bibliotecas externas juntamente com seu projeto.
+>>>>>>> 8d70ef9b5fcd877ef607e51f6f2f2348373b8182
