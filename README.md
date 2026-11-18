@@ -15,7 +15,7 @@ O sistema simula o totem de um multiplex: quatro telas guiam o usuário do catá
 - **Tela 2 · Mapa de assentos** — grade interativa da sala, bloqueio visual de assentos ocupados, reserva temporária durante a compra.
 - **Tela 3 · Bomboniere** — catálogo com imagem e preço, controle de quantidade por produto, aplicação automática de combos com desconto.
 - **Tela 4 · Pagamento** — resumo do pedido (ingressos + bomboniere + descontos), total final, confirmação que marca assentos como ocupados.
-- **Cancelamento por inatividade** — 2 minutos sem interação liberam os assentos reservados e voltam à tela inicial.
+- **Cancelamento por inatividade** — 5 minutos sem interação liberam os assentos reservados e voltam à tela inicial.
 - **Console de administração** — cadastro de filmes, sessões e produtos; atualização e remoção de preços; listagem geral; tudo despachado para a thread da GUI via fila de eventos Qt.
 
 ## Arquitetura e estrutura de diretórios
