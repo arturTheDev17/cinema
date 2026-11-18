@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-45adb53c7c16c4bb71b3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CinemaMecha",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CinemaMecha::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CinemaMecha-Debug-1786dd27b0edc165e581.json",
+					"name" : "CinemaMecha",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CinemaMecha_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CinemaMecha_autogen-Debug-6faf71ba497cd5227bc1.json",
+					"name" : "CinemaMecha_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CinemaMecha_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CinemaMecha_autogen_timestamp_deps-Debug-f76d9b03239f3563f38d.json",
+					"name" : "CinemaMecha_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/artur/Downloads/cinema-2-20261118T000910Z-1-001/CinemaMecha/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug",
+		"source" : "C:/Users/artur/Downloads/cinema-2-20261118T000910Z-1-001/CinemaMecha"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

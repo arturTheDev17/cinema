@@ -2,4 +2,13 @@
     <qresource prefix="/">
         <file>logo.png</file>
     </qresource>
+    <qresource prefix="/img">
+        <file alias="pipoca.png">img/pipoca.png</file>
+        <file alias="pipoca2.png">img/pipoca2.png</file>
+        <file alias="refri.png">img/refri.png</file>
+        <file alias="chocolate.png">img/chocolate.png</file>
+        <file alias="nachos.png">img/nachos.png</file>
+        <file alias="agua.png">img/agua.png</file>
+        <file alias="bala.png">img/bala.png</file>
+    </qresource>
 </RCC>

@@ -1,0 +1,1 @@
+C:/Users/artur/Downloads/cinema-2-20261118T000910Z-1-001/CinemaMecha/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/_CPack_Packages/win64/ZIP/CinemaMecha-Portable/./CinemaMecha.exe

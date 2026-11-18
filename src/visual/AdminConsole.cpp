@@ -1,3 +1,8 @@
+/**
+ * @file AdminConsole.cpp
+ * @brief Implementação do console administrativo assíncrono (cadastro, edição e remoção em paralelo à GUI).
+ */
+
 #include "AdminConsole.h"
 
 #include <QCoreApplication>
@@ -20,33 +25,48 @@
 #include <utility>
 #include <vector>
 
-/** Estado compartilhado entre a GUI e a thread do console. */
+/**
+ * @struct EstadoAdmin
+ * @brief Estado compartilhado de forma segura entre a GUI e a thread do console.
+ */
 struct EstadoAdmin {
-    std::atomic<bool> vivo{true}; // false depois que o AdminConsole e destruido
-    RepositorioGenerico<Filme>* filmes;
-    RepositorioGenerico<Sessao>* sessoes;
-    RepositorioGenerico<ItemBomboniere>* bomboniere;
-    AdminConsole::Ganchos ganchos;
+    std::atomic<bool> vivo{true};                    ///< false depois que o AdminConsole é destruído.
+    RepositorioGenerico<Filme>* filmes;              ///< Ponteiro para o repositório de filmes.
+    RepositorioGenerico<Sessao>* sessoes;            ///< Ponteiro para o repositório de sessões.
+    RepositorioGenerico<ItemBomboniere>* bomboniere; ///< Ponteiro para o repositório da bomboniere.
+    AdminConsole::Ganchos ganchos;                   ///< Callbacks executados na thread da GUI.
 };
 
 namespace {
 
-// Limites e valores padrao ao cadastrar uma sala nova.
+// Limites e valores padrão ao cadastrar uma sala nova.
 constexpr int kFileirasPadrao = 6;
 constexpr int kColunasPadrao  = 8;
 constexpr int kMaxFileiras    = Sala::kMaxFileiras;
 constexpr int kMaxColunas     = 20;
 
-// ---------- Leitura de console (so roda na thread do admin) ----------
+// ---------- Leitura de console (só roda na thread do admin) ----------
 
-// Le uma linha inteira; retorna false se o stdin fechou (EOF).
+/**
+ * @brief Lê uma linha inteira da entrada padrão; retorna false se o stdin fechou (EOF).
+ * @param[in] prompt Mensagem exibida antes da leitura.
+ * @param[out] out Linha lida do teclado.
+ * @return true se leu com sucesso; false se o fluxo de entrada foi encerrado.
+ */
 bool lerLinha(const std::string& prompt, std::string& out) {
     std::cout << prompt << std::flush;
     return static_cast<bool>(std::getline(std::cin, out));
 }
 
-// Repete ate receber um inteiro em [minimo, maximo]. Linha vazia usa "padrao", se houver.
-// Retorna false se o stdin fechou.
+/**
+ * @brief Repete a leitura até obter um inteiro em [minimo, maximo]; linha vazia usa o valor padrão, se houver.
+ * @param[in] prompt Mensagem exibida ao operador.
+ * @param[in] minimo Limite inferior aceito.
+ * @param[in] maximo Limite superior aceito.
+ * @param[out] out Inteiro validado.
+ * @param[in] padrao Valor opcional adotado ao pressionar Enter sem digitar texto.
+ * @return true se um inteiro válido foi obtido; false se o stdin fechou.
+ */
 bool lerInteiro(const std::string& prompt, int minimo, int maximo, int& out,
                 std::optional<int> padrao = std::nullopt) {
     std::string linha;
@@ -68,7 +88,13 @@ bool lerInteiro(const std::string& prompt, int minimo, int maximo, int& out,
     return false;
 }
 
-// Aceita "12.5" ou "12,5" com valor >= minimo. Retorna false se o stdin fechou.
+/**
+ * @brief Lê um decimal >= minimo aceitando "." ou "," como separador.
+ * @param[in] prompt Mensagem exibida ao operador.
+ * @param[in] minimo Valor mínimo permitido.
+ * @param[out] out Valor decimal validado.
+ * @return true se válido; false se o stdin fechou.
+ */
 bool lerDecimal(const std::string& prompt, double minimo, double& out) {
     std::string linha;
     while (lerLinha(prompt, linha)) {
@@ -86,7 +112,11 @@ bool lerDecimal(const std::string& prompt, double minimo, double& out) {
     return false;
 }
 
-// Formato "HH:MM" (00:00 a 23:59).
+/**
+ * @brief Valida o formato "HH:MM" entre 00:00 e 23:59.
+ * @param[in] h String de horário.
+ * @return true se o horário for sintaticamente e numericamente válido.
+ */
 bool horarioValido(const std::string& h) {
     if (h.size() != 5 || h[2] != ':') return false;
     for (size_t i : {0u, 1u, 3u, 4u}) {
@@ -97,38 +127,61 @@ bool horarioValido(const std::string& h) {
     return hh <= 23 && mm <= 59;
 }
 
-// ---------- Cadastro de sessao ----------
+// ---------- Cadastro de sessão ----------
 
+/**
+ * @struct SalaInfo
+ * @brief Metadados resumidos de uma sala já existente no sistema.
+ */
 struct SalaInfo {
-    int numero;
-    std::string tipo;
-    int fileiras;
-    int colunas;
+    int numero;       ///< Número identificador da sala.
+    std::string tipo; ///< Tipo da sala.
+    int fileiras;     ///< Quantidade de fileiras.
+    int colunas;      ///< Quantidade de colunas.
 };
 
-// Copia dos dados dos repositorios, tirada na thread da GUI, para a thread do admin
-// poder listar/validar sem tocar nos repositorios (evita data race).
+/**
+ * @struct SnapshotAdmin
+ * @brief Cópia dos dados dos repositórios tirada na thread da GUI para leitura segura pela thread do admin.
+ */
 struct SnapshotAdmin {
-    std::vector<std::pair<int, std::string>> filmes;     // (id, titulo)
-    std::map<int, SalaInfo> salas;                        // salas ja cadastradas, por numero
-    std::set<std::pair<int, std::string>> ocupacao;       // (numero da sala, horario)
+    std::vector<std::pair<int, std::string>> filmes; ///< Pares (id, título) dos filmes disponíveis.
+    std::map<int, SalaInfo> salas;                   ///< Salas já cadastradas, indexadas por número.
+    std::set<std::pair<int, std::string>> ocupacao;  ///< Pares (número da sala, horário) já ocupados.
 };
 
+/**
+ * @struct NovaSessao
+ * @brief Dados coletados via console para criação de uma nova sessão.
+ */
 struct NovaSessao {
-    int idFilme = 0;
-    std::string horario;
-    TipoAudio audio = TipoAudio::DUBLADO;
-    TecnologiaExibicao tecnologia = TecnologiaExibicao::DOIS_D;
-    int numeroSala = 0;
-    std::string tipoSala;
-    int fileiras = kFileirasPadrao;
-    int colunas = kColunasPadrao;
-    double preco = 0.0;
+    int idFilme = 0;                                           ///< ID do filme escolhido.
+    std::string horario;                                       ///< Horário no formato "HH:MM".
+    TipoAudio audio = TipoAudio::DUBLADO;                      ///< Áudio escolhido.
+    TecnologiaExibicao tecnologia = TecnologiaExibicao::DOIS_D;///< Tecnologia de projeção.
+    int numeroSala = 0;                                        ///< Número da sala.
+    std::string tipoSala;                                      ///< Categoria da sala.
+    int fileiras = kFileirasPadrao;                            ///< Fileiras da sala.
+    int colunas = kColunasPadrao;                              ///< Colunas da sala.
+    double preco = 0.0;                                        ///< Preço base do ingresso.
 };
 
-enum class ResultadoDialogo { CONCLUIDO, CANCELADO, STDIN_FECHADO };
+/**
+ * @enum ResultadoDialogo
+ * @brief Estados finais do diálogo de coleta de dados no terminal.
+ */
+enum class ResultadoDialogo {
+    CONCLUIDO,    ///< Coleta finalizada com dados válidos.
+    CANCELADO,    ///< Operação cancelada pelo usuário ou por conflito de horário.
+    STDIN_FECHADO ///< Entrada padrão encerrada.
+};
 
-// Conduz as perguntas do cadastro de sessao. Nao mexe em nenhum repositorio.
+/**
+ * @brief Conduz as perguntas do cadastro de sessão sem tocar diretamente em nenhum repositório.
+ * @param[in] snap Fotografia consistente dos repositórios.
+ * @param[out] out Estrutura preenchida com os dados da nova sessão.
+ * @return ResultadoDialogo indicando conclusão, cancelamento ou EOF.
+ */
 ResultadoDialogo coletarNovaSessao(const SnapshotAdmin& snap, NovaSessao& out) {
     const int kSemLimite = std::numeric_limits<int>::max();
 
@@ -148,7 +201,7 @@ ResultadoDialogo coletarNovaSessao(const SnapshotAdmin& snap, NovaSessao& out) {
         std::cout << "[ADMIN] Nao existe filme com ID " << id << ".\n";
     }
 
-    // Horario
+    // Horário
     std::string horario;
     while (true) {
         if (!lerLinha("Horario (HH:MM): ", horario)) return ResultadoDialogo::STDIN_FECHADO;
@@ -157,14 +210,14 @@ ResultadoDialogo coletarNovaSessao(const SnapshotAdmin& snap, NovaSessao& out) {
     }
     out.horario = horario;
 
-    // Audio e tecnologia
+    // Áudio e tecnologia
     int escolha = 0;
     if (!lerInteiro("Audio (1 = Dublado, 2 = Legendado): ", 1, 2, escolha)) return ResultadoDialogo::STDIN_FECHADO;
     out.audio = (escolha == 1) ? TipoAudio::DUBLADO : TipoAudio::LEGENDADO;
     if (!lerInteiro("Tecnologia (1 = 2D, 2 = 3D): ", 1, 2, escolha)) return ResultadoDialogo::STDIN_FECHADO;
     out.tecnologia = (escolha == 1) ? TecnologiaExibicao::DOIS_D : TecnologiaExibicao::TRES_D;
 
-    // Sala: se o numero ja existe, reaproveita tipo e dimensoes
+    // Sala: se o número já existe, reaproveita tipo e dimensões
     if (!lerInteiro("Numero da sala (1-99): ", 1, 99, out.numeroSala)) return ResultadoDialogo::STDIN_FECHADO;
     auto it = snap.salas.find(out.numeroSala);
     if (it != snap.salas.end()) {
@@ -190,9 +243,13 @@ ResultadoDialogo coletarNovaSessao(const SnapshotAdmin& snap, NovaSessao& out) {
 }
 
 
-std::atomic<bool> g_encerrando{false}; // true quando o QApplication esta terminando
+std::atomic<bool> g_encerrando{false}; ///< true quando o QApplication está terminando.
 
-// Agenda uma funcao para rodar na thread da GUI. Retorna false se o app ja esta encerrando.
+/**
+ * @brief Agenda uma função para rodar na thread da GUI via fila de eventos do Qt.
+ * @param[in] fn Função a ser executada na thread principal.
+ * @return false se a aplicação já estiver encerrando; true caso contrário.
+ */
 bool postarNaGui(std::function<void()> fn) {
     if (g_encerrando) return false;
     QCoreApplication* app = QCoreApplication::instance();
@@ -201,8 +258,12 @@ bool postarNaGui(std::function<void()> fn) {
     return true;
 }
 
-// Copia os dados dos repositorios (feita na thread da GUI) e espera por ela sem
-// nunca bloquear para sempre: se o app encerrar, desiste.
+/**
+ * @brief Solicita uma cópia dos dados dos repositórios na thread da GUI e aguarda com timeout.
+ * @param[in] est Ponteiro compartilhado para o estado administrativo.
+ * @param[out] out Snapshot preenchido.
+ * @return true se concluído; false se o aplicativo encerrou antes da resposta.
+ */
 bool tirarSnapshot(const std::shared_ptr<EstadoAdmin>& est, SnapshotAdmin& out) {
     auto prom = std::make_shared<std::promise<SnapshotAdmin>>();
     std::future<SnapshotAdmin> fut = prom->get_future();
@@ -232,11 +293,15 @@ bool tirarSnapshot(const std::shared_ptr<EstadoAdmin>& est, SnapshotAdmin& out) 
     try {
         out = fut.get();
     } catch (const std::future_error&) {
-        return false; // a tarefa foi descartada sem executar
+        return false; // A tarefa foi descartada sem executar
     }
     return true;
 }
 
+/**
+ * @brief Loop interativo do console administrativo com comandos de cadastro, listagem, edição e remoção.
+ * @param[in] est Ponteiro compartilhado para EstadoAdmin.
+ */
 void executarConsole(std::shared_ptr<EstadoAdmin> est) {
     std::cout << "========================================\n";
     std::cout << " [MODO ADMIN CONSOLE ATIVO]\n";
@@ -245,6 +310,8 @@ void executarConsole(std::shared_ptr<EstadoAdmin> est) {
     std::cout << "   2 - Adicionar Produto Bomboniere\n";
     std::cout << "   3 - Listar Tudo (Filmes, Sessoes e Bomboniere)\n";
     std::cout << "   4 - Adicionar Sessao\n";
+    std::cout << "   5 - Atualizar preco de Produto\n";
+    std::cout << "   6 - Remover Produto\n";
     std::cout << "========================================\n";
 
     std::string opcao;
@@ -261,14 +328,18 @@ void executarConsole(std::shared_ptr<EstadoAdmin> est) {
             if (!lerInteiro("Classificacao (anos, 0 = livre): ", 0, 18, classificacao)) break;
             if (!lerLinha("Genero: ", genero)) break;
 
-            // O Filme usa um contador estatico de id: criar na thread da GUI.
+            // O Filme usa um contador estático de id: criar na thread da GUI.
             postarNaGui([est, titulo, duracao, classificacao, genero]() {
                 if (!est->vivo) return;
-                Filme novo(titulo, duracao, classificacao, genero);
-                const int idNovo = novo.getId();
-                est->filmes->adicionar(novo);
-                if (est->ganchos.aoMudarCatalogo) est->ganchos.aoMudarCatalogo();
-                std::cout << "[ADMIN] Filme adicionado com sucesso! (ID " << idNovo << ")\n" << std::flush;
+                try {
+                    Filme novo(titulo, duracao, classificacao, genero); // Valida os dados
+                    const int idNovo = novo.getId();
+                    est->filmes->adicionar(novo);
+                    if (est->ganchos.aoMudarCatalogo) est->ganchos.aoMudarCatalogo();
+                    std::cout << "[ADMIN] Filme adicionado com sucesso! (ID " << idNovo << ")\n" << std::flush;
+                } catch (const std::exception& e) {
+                    std::cout << "[ADMIN] Filme nao cadastrado: " << e.what() << "\n" << std::flush;
+                }
             });
         }
         else if (opcao == "2") {
@@ -277,14 +348,18 @@ void executarConsole(std::shared_ptr<EstadoAdmin> est) {
 
             if (!lerLinha("Nome do produto: ", nome)) break;
             if (nome.empty()) { std::cout << "[ADMIN] Nome vazio. Cancelado.\n"; continue; }
-            if (!lerDecimal("Preco (R$): ", 0.0, preco)) break;
+            if (!lerDecimal("Preco (R$): ", 0.01, preco)) break;
 
             postarNaGui([est, nome, preco]() {
                 if (!est->vivo) return;
-                // O ItemBomboniere usa um contador estatico de id: criar na thread da GUI.
-                est->bomboniere->adicionar(ItemBomboniere(nome, preco, ""));
-                if (est->ganchos.aoMudarBomboniere) est->ganchos.aoMudarBomboniere();
-                std::cout << "[ADMIN] Produto de bomboniere adicionado com sucesso!\n" << std::flush;
+                // O ItemBomboniere usa um contador estático de id: criar na thread da GUI.
+                try {
+                    est->bomboniere->adicionar(ItemBomboniere(nome, preco, "")); // Valida nome e preço
+                    if (est->ganchos.aoMudarBomboniere) est->ganchos.aoMudarBomboniere();
+                    std::cout << "[ADMIN] Produto de bomboniere adicionado com sucesso!\n" << std::flush;
+                } catch (const std::exception& e) {
+                    std::cout << "[ADMIN] Produto nao cadastrado: " << e.what() << "\n" << std::flush;
+                }
             });
         }
         else if (opcao == "3") {
@@ -293,23 +368,16 @@ void executarConsole(std::shared_ptr<EstadoAdmin> est) {
                 std::cout << "\n================ [RELATORIO DO SISTEMA] ================\n";
 
                 std::cout << "\n--- FILMES CADASTRADOS ---\n";
-                for (size_t i = 0; i < est->filmes->tamanho(); ++i) {
-                    const Filme& f = est->filmes->obter(i);
-                    std::cout << " * [ID " << f.getId() << "] " << f.getTitulo() << " (" << f.getGenero() << ", " << f.getDuracao() << " min)\n";
-                }
+                for (const Filme& f : est->filmes->listarTodos()) std::cout << " * " << f << "\n";
 
-                std::cout << "\n--- SESSOES DISPONIVEIS ---\n";
-                for (size_t i = 0; i < est->sessoes->tamanho(); ++i) {
-                    const Sessao& s = est->sessoes->obter(i);
-                    std::cout << " * [Sessao ID " << s.getId() << "] Filme: " << s.getFilme().getTitulo()
-                              << " | Horario: " << s.getHorario() << " | Preco Base: R$ " << s.getPrecoBase() << "\n";
-                }
+                std::cout << "\n--- SESSOES DISPONIVEIS (por horario) ---\n";
+                std::vector<const Sessao*> ordenadas;
+                for (const Sessao& s : est->sessoes->listarTodos()) ordenadas.push_back(&s);
+                std::sort(ordenadas.begin(), ordenadas.end(), [](const Sessao* a, const Sessao* b) { return *a < *b; });
+                for (const Sessao* s : ordenadas) std::cout << " * " << *s << "\n";
 
                 std::cout << "\n--- PRODUTOS DA BOMBONIERE ---\n";
-                for (size_t i = 0; i < est->bomboniere->tamanho(); ++i) {
-                    const ItemBomboniere& item = est->bomboniere->obter(i);
-                    std::cout << " * [ID " << item.getId() << "] " << item.getNome() << " - R$ " << item.getPreco() << "\n";
-                }
+                for (const ItemBomboniere& item : est->bomboniere->listarTodos()) std::cout << " * " << item << "\n";
                 std::cout << "=========================================================\n\n" << std::flush;
             });
         }
@@ -329,11 +397,8 @@ void executarConsole(std::shared_ptr<EstadoAdmin> est) {
             postarNaGui([est, nova]() {
                 if (!est->vivo) return;
 
-                const Filme* filme = nullptr;
+                const Filme* filme = est->filmes->buscar(nova.idFilme);
                 int novoId = 1;
-                for (size_t i = 0; i < est->filmes->tamanho(); ++i) {
-                    if (est->filmes->obter(i).getId() == nova.idFilme) { filme = &est->filmes->obter(i); break; }
-                }
                 for (size_t i = 0; i < est->sessoes->tamanho(); ++i) {
                     novoId = std::max(novoId, est->sessoes->obter(i).getId() + 1);
                 }
@@ -343,7 +408,7 @@ void executarConsole(std::shared_ptr<EstadoAdmin> est) {
                 }
 
                 try {
-                    // Sessao guarda copias de Filme e Sala: cada sessao tem a sua propria lotacao.
+                    // Sessao guarda cópias de Filme e Sala: cada sessão tem a sua própria lotação.
                     est->sessoes->adicionar(Sessao(novoId, *filme,
                         Sala(nova.numeroSala, nova.fileiras, nova.colunas, nova.tipoSala),
                         nova.horario, nova.audio, nova.tecnologia, nova.preco));
@@ -355,6 +420,58 @@ void executarConsole(std::shared_ptr<EstadoAdmin> est) {
                 std::cout << "[ADMIN] Sessao ID " << novoId << " adicionada para \"" << filme->getTitulo() << "\".\n" << std::flush;
             });
         }
+        else if (opcao == "5") {
+            constexpr int kMaxId = std::numeric_limits<int>::max();
+            int id = 0;
+            double novoPreco = 0.0;
+
+            if (!lerInteiro("ID do produto (0 = cancelar): ", 0, kMaxId, id)) break;
+            if (id == 0) { std::cout << "[ADMIN] Atualizacao cancelada.\n"; continue; }
+            if (!lerDecimal("Novo preco (R$): ", 0.01, novoPreco)) break;
+
+            postarNaGui([est, id, novoPreco]() {
+                if (!est->vivo) return;
+                ItemBomboniere* item = est->bomboniere->buscar(id);
+                if (!item) {
+                    std::cout << "[ADMIN] Produto ID " << id << " nao encontrado.\n" << std::flush;
+                    return;
+                }
+                const double antigo = item->getPreco();
+                try {
+                    item->setPreco(novoPreco); // Só o preço muda; nome, id e imagem ficam intactos
+                } catch (const std::exception& e) {
+                    std::cout << "[ADMIN] " << e.what() << "\n" << std::flush;
+                    return;
+                }
+                if (est->ganchos.aoMudarBomboniere) est->ganchos.aoMudarBomboniere();
+                std::cout << "[ADMIN] Preco de \"" << item->getNome() << "\" alterado de R$ " << antigo
+                          << " para R$ " << novoPreco << ".\n" << std::flush;
+            });
+        }
+        else if (opcao == "6") {
+            constexpr int kMaxId = std::numeric_limits<int>::max();
+            int id = 0;
+            std::string resposta;
+
+            if (!lerInteiro("ID do produto (0 = cancelar): ", 0, kMaxId, id)) break;
+            if (id == 0) { std::cout << "[ADMIN] Remocao cancelada.\n"; continue; }
+            if (!lerLinha("Remover o produto ID " + std::to_string(id) + "? (s/n): ", resposta)) break;
+            if (resposta != "s" && resposta != "S") { std::cout << "[ADMIN] Remocao cancelada.\n"; continue; }
+
+            postarNaGui([est, id]() {
+                if (!est->vivo) return;
+                const ItemBomboniere* item = est->bomboniere->buscar(id);
+                if (!item) {
+                    std::cout << "[ADMIN] Produto ID " << id << " nao encontrado.\n" << std::flush;
+                    return;
+                }
+                const std::string nome = item->getNome(); // Copia antes de remover
+                // Seguro: o Carrinho guarda cópias dos itens, nunca ponteiros para o repositório.
+                est->bomboniere->removerPorId(id);
+                if (est->ganchos.aoMudarBomboniere) est->ganchos.aoMudarBomboniere();
+                std::cout << "[ADMIN] Produto \"" << nome << "\" removido.\n" << std::flush;
+            });
+        }
         else if (!opcao.empty()) {
             std::cout << "[ADMIN] Comando desconhecido: " << opcao << "\n";
         }
@@ -363,6 +480,7 @@ void executarConsole(std::shared_ptr<EstadoAdmin> est) {
 
 } // namespace
 
+/** @details Inicializa o estado compartilhado com ponteiros para os repositórios e os ganchos visuais. */
 AdminConsole::AdminConsole(RepositorioGenerico<Filme>& filmes,
                            RepositorioGenerico<Sessao>& sessoes,
                            RepositorioGenerico<ItemBomboniere>& bomboniere,
@@ -374,14 +492,16 @@ AdminConsole::AdminConsole(RepositorioGenerico<Filme>& filmes,
     estado->ganchos = std::move(ganchos);
 }
 
+/** @details Marca estado->vivo como false na thread da GUI evitando condições de corrida no fechamento. */
 AdminConsole::~AdminConsole() {
     // Roda na thread da GUI, a mesma que executa as tarefas postadas: sem corrida.
     estado->vivo = false;
 }
 
+/** @details Conecta QCoreApplication::aboutToQuit para sinalizar encerramento e inicia a thread destacada. */
 void AdminConsole::iniciar() {
     QObject::connect(QCoreApplication::instance(), &QCoreApplication::aboutToQuit,
                      []() { g_encerrando = true; });
-    // detach: a thread pode ficar bloqueada em std::cin ate o processo terminar.
+    // detach: a thread pode ficar bloqueada em std::cin até o processo terminar.
     std::thread(executarConsole, estado).detach();
 }

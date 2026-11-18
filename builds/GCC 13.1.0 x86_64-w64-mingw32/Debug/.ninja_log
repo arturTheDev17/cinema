@@ -1,43 +1,32 @@
 # ninja log v6
-12	594	8164993195297714	build.ninja	ca3547971ffdd678
-3	586	8164993195297714	build.ninja	ca3547971ffdd678
-14	5816	8164993253383161	CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-14	5816	8164993253383161	CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-14	5816	8164993253383161	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-14	5816	8164993253383161	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-5821	5999	8164993255863166	CinemaAutoatendimento_autogen/UVLADIE3JM/qrc_recursos.cpp	4d64c433526ba354
-5821	5999	8164993255863166	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/UVLADIE3JM/qrc_recursos.cpp	4d64c433526ba354
-6085	6451	8164993256773189	CMakeFiles/CinemaAutoatendimento.dir/CinemaAutoatendimento_autogen/UVLADIE3JM/qrc_recursos.cpp.obj	da1fddc05d3afba9
-6025	6715	8164993256173175	CMakeFiles/CinemaAutoatendimento.dir/src/classes/ItemBomboniere.cpp.obj	7b1c4406527e67c1
-6015	6751	8164993256063174	CMakeFiles/CinemaAutoatendimento.dir/src/classes/Filme.cpp.obj	147bfe222f3185ba
-6020	6756	8164993256113164	CMakeFiles/CinemaAutoatendimento.dir/src/classes/Ingresso.cpp.obj	79831e898bf280f5
-6005	6763	8164993255973167	CMakeFiles/CinemaAutoatendimento.dir/src/classes/Assento.cpp.obj	1db58f1ebeddc7f
-6034	6833	8164993256263158	CMakeFiles/CinemaAutoatendimento.dir/src/classes/Sessao.cpp.obj	6f1b20ebf848a1aa
-6030	6836	8164993256223187	CMakeFiles/CinemaAutoatendimento.dir/src/classes/Sala.cpp.obj	68f33b59669c1ae4
-6010	7918	8164993256013155	CMakeFiles/CinemaAutoatendimento.dir/src/classes/Carrinho.cpp.obj	8baeeaf6ce183fc5
-6078	9187	8164993256703172	CMakeFiles/CinemaAutoatendimento.dir/src/visual/TelaInicialWidget.cpp.obj	f53a8b9bfef7b8b0
-6039	9245	8164993256303157	CMakeFiles/CinemaAutoatendimento.dir/src/classes/main.cpp.obj	e2b1ab596e012af0
-6047	9831	8164993256393163	CMakeFiles/CinemaAutoatendimento.dir/src/visual/SidebarCarrinhoWidget.cpp.obj	e19b557247c6deed
-6071	9976	8164993256623189	CMakeFiles/CinemaAutoatendimento.dir/src/visual/Tela4PagamentoWidget.cpp.obj	e0308662a6724dcf
-6064	10029	8164993256553175	CMakeFiles/CinemaAutoatendimento.dir/src/visual/Tela3BomboniereWidget.cpp.obj	f26863071b70cec9
-6056	10076	8164993256483169	CMakeFiles/CinemaAutoatendimento.dir/src/visual/Tela2AssentosWidget.cpp.obj	20c6d64f6c08f75a
-6051	10434	8164993256433165	CMakeFiles/CinemaAutoatendimento.dir/src/visual/Tela1SelecaoFilmeWidget.cpp.obj	d1b9e521ad3e659a
-6000	10824	8164993255913158	CMakeFiles/CinemaAutoatendimento.dir/CinemaAutoatendimento_autogen/mocs_compilation.cpp.obj	72c95de6c7361ff6
-6043	14628	8164993256353174	CMakeFiles/CinemaAutoatendimento.dir/src/visual/MainWindow.cpp.obj	473082099a3e30ab
-14630	19617	8164993342213123	CinemaAutoatendimento.exe	56add5d0bbeb6c5
-23	909	8165002814178803	CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-23	909	8165002814178803	CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-23	909	8165002814178803	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/timestamp	f169108c50b5dc9d
-23	909	8165002814178803	C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento_autogen/mocs_compilation.cpp	f169108c50b5dc9d
-919	1388	8165002814954169	CMakeFiles/CinemaAutoatendimento.dir/src/classes/Filme.cpp.obj	147bfe222f3185ba
-924	1528	8165002815004169	CMakeFiles/CinemaAutoatendimento.dir/src/classes/Sessao.cpp.obj	6f1b20ebf848a1aa
-914	2068	8165002814914169	CMakeFiles/CinemaAutoatendimento.dir/src/classes/Carrinho.cpp.obj	8baeeaf6ce183fc5
-929	3792	8165002815059350	CMakeFiles/CinemaAutoatendimento.dir/src/classes/main.cpp.obj	e2b1ab596e012af0
-940	4186	8165002815169336	CMakeFiles/CinemaAutoatendimento.dir/src/visual/SidebarCarrinhoWidget.cpp.obj	e19b557247c6deed
-966	4189	8165002815434950	CMakeFiles/CinemaAutoatendimento.dir/src/visual/Tela4PagamentoWidget.cpp.obj	e0308662a6724dcf
-953	4425	8165002815299768	CMakeFiles/CinemaAutoatendimento.dir/src/visual/Tela2AssentosWidget.cpp.obj	20c6d64f6c08f75a
-959	4475	8165002815364952	CMakeFiles/CinemaAutoatendimento.dir/src/visual/Tela3BomboniereWidget.cpp.obj	f26863071b70cec9
-947	4652	8165002815239344	CMakeFiles/CinemaAutoatendimento.dir/src/visual/Tela1SelecaoFilmeWidget.cpp.obj	d1b9e521ad3e659a
-909	4863	8165002814864178	CMakeFiles/CinemaAutoatendimento.dir/CinemaAutoatendimento_autogen/mocs_compilation.cpp.obj	72c95de6c7361ff6
-934	6700	8165002815109344	CMakeFiles/CinemaAutoatendimento.dir/src/visual/MainWindow.cpp.obj	473082099a3e30ab
-6700	9310	8165002872770703	CinemaAutoatendimento.exe	56add5d0bbeb6c5
+3	34	8166746438604798	C:/Users/artur/Downloads/cinema-2-20261118T000910Z-1-001/CinemaMecha/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CMakeFiles/cmake.verify_globs	cac2520ba79b5606
+38	1347	8166746451067109	CinemaMecha_autogen/timestamp	6b41550a901deafd
+38	1347	8166746451067109	CinemaMecha_autogen/mocs_compilation.cpp	6b41550a901deafd
+38	1347	8166746451067109	C:/Users/artur/Downloads/cinema-2-20261118T000910Z-1-001/CinemaMecha/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaMecha_autogen/timestamp	6b41550a901deafd
+38	1347	8166746451067109	C:/Users/artur/Downloads/cinema-2-20261118T000910Z-1-001/CinemaMecha/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaMecha_autogen/mocs_compilation.cpp	6b41550a901deafd
+1352	1739	8166746455823766	CinemaMecha_autogen/UVLADIE3JM/qrc_recursos.cpp	808db4de00526427
+1352	1739	8166746455823766	C:/Users/artur/Downloads/cinema-2-20261118T000910Z-1-001/CinemaMecha/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaMecha_autogen/UVLADIE3JM/qrc_recursos.cpp	808db4de00526427
+1800	5230	8166746456487263	CMakeFiles/CinemaMecha.dir/src/classes/Filme.cpp.obj	486c6785436a2ee1
+1814	5249	8166746456632426	CMakeFiles/CinemaMecha.dir/src/classes/Produto.cpp.obj	ff5fd112e5ca0546
+1809	5338	8166746456587255	CMakeFiles/CinemaMecha.dir/src/classes/ItemBomboniere.cpp.obj	8d1a86d87a7fe625
+1805	5965	8166746456537243	CMakeFiles/CinemaMecha.dir/src/classes/Ingresso.cpp.obj	74dde4c1091c42a8
+1745	5996	8166746455935968	CMakeFiles/CinemaMecha.dir/src/classes/Assento.cpp.obj	421b4847ac1a6a2
+1795	5997	8166746456447252	CMakeFiles/CinemaMecha.dir/src/classes/DadosIniciais.cpp.obj	4df250de02cfc32d
+1818	6006	8166746456672566	CMakeFiles/CinemaMecha.dir/src/classes/Sala.cpp.obj	788f1a1134e56d12
+1823	6023	8166746456722537	CMakeFiles/CinemaMecha.dir/src/classes/Sessao.cpp.obj	a0a6941d4b1f3efb
+1750	6604	8166746455985976	CMakeFiles/CinemaMecha.dir/src/classes/Carrinho.cpp.obj	eb4534f0a7a5236b
+1789	6909	8166746456387264	CMakeFiles/CinemaMecha.dir/src/classes/Combo.cpp.obj	e9302c9c6e4c29ed
+1837	7064	8166746456864919	CMakeFiles/CinemaMecha.dir/src/visual/BarraTituloWidget.cpp.obj	d98d748c6f7216db
+1828	7133	8166746456772559	CMakeFiles/CinemaMecha.dir/src/main.cpp.obj	390505edc7772617
+1846	7147	8166746456954851	CMakeFiles/CinemaMecha.dir/src/visual/SidebarCarrinhoWidget.cpp.obj	4d1d6e3a1a8ee7cf
+5966	7176	8166746498147246	CMakeFiles/CinemaMecha.dir/CinemaMecha_autogen/UVLADIE3JM/qrc_recursos.cpp.obj	bbdf2e92ae35fe05
+1856	7383	8166746457054843	CMakeFiles/CinemaMecha.dir/src/visual/Tela2AssentosWidget.cpp.obj	86d1ad3bbaf7ba2a
+1852	7898	8166746457004851	CMakeFiles/CinemaMecha.dir/src/visual/Tela1SelecaoFilmeWidget.cpp.obj	ee43c265676d3418
+1833	8015	8166746456822545	CMakeFiles/CinemaMecha.dir/src/visual/AdminConsole.cpp.obj	20bc39000666e81b
+1842	8024	8166746456904862	CMakeFiles/CinemaMecha.dir/src/visual/MainWindow.cpp.obj	ab83a222a2bf5a65
+1739	8284	8166746455885961	CMakeFiles/CinemaMecha.dir/CinemaMecha_autogen/mocs_compilation.cpp.obj	8c3650a3e44528b4
+5338	9298	8166746491870988	CMakeFiles/CinemaMecha.dir/src/visual/TelaInicialWidget.cpp.obj	e923605c26ea0593
+5249	9808	8166746490983547	CMakeFiles/CinemaMecha.dir/src/visual/Tela4PagamentoWidget.cpp.obj	53fd0d068704654b
+5230	10053	8166746490787917	CMakeFiles/CinemaMecha.dir/src/visual/Tela3BomboniereWidget.cpp.obj	61fb52cfd9d94106
+10053	13152	8166746539014566	CinemaMecha.exe	e344685a8a07b6c1
+43	61	8166747031901519	C:/Users/artur/Downloads/cinema-2-20261118T000910Z-1-001/CinemaMecha/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CMakeFiles/cmake.verify_globs	cac2520ba79b5606

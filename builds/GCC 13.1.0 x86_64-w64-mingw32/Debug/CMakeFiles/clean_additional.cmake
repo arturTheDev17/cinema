@@ -3,8 +3,8 @@ cmake_minimum_required(VERSION 3.16)
 
 if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "Debug")
   file(REMOVE_RECURSE
-  "CMakeFiles\\CinemaAutoatendimento_autogen.dir\\AutogenUsed.txt"
-  "CMakeFiles\\CinemaAutoatendimento_autogen.dir\\ParseCache.txt"
-  "CinemaAutoatendimento_autogen"
+  "CMakeFiles\\CinemaMecha_autogen.dir\\AutogenUsed.txt"
+  "CMakeFiles\\CinemaMecha_autogen.dir\\ParseCache.txt"
+  "CinemaMecha_autogen"
   )
 endif()

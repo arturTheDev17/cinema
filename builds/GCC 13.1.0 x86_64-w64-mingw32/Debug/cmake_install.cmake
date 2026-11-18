@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/artur/Desktop/cinema
+# Install script for directory: C:/Users/artur/Downloads/cinema-2-20261118T000910Z-1-001/CinemaMecha
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/CinemaAutoatendimento")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/CinemaMecha")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,21 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE EXECUTABLE FILES "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaAutoatendimento.exe")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./CinemaAutoatendimento.exe" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./CinemaAutoatendimento.exe")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE EXECUTABLE FILES "C:/Users/artur/Downloads/cinema-2-20261118T000910Z-1-001/CinemaMecha/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/CinemaMecha.exe")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./CinemaMecha.exe" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./CinemaMecha.exe")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "F:/qt/Tools/mingw1310_64/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./CinemaAutoatendimento.exe")
+      execute_process(COMMAND "F:/qt/Tools/mingw1310_64/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./CinemaMecha.exe")
     endif()
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE DIRECTORY FILES "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/" REGEX "/[^/]*\\.pdb$" EXCLUDE REGEX "/[^/]*\\.ilk$" EXCLUDE REGEX "/[^/]*\\.exp$" EXCLUDE REGEX "/[^/]*\\.lib$" EXCLUDE)
+  
+        execute_process(COMMAND "F:/qt/6.12.0/mingw_64/bin/windeployqt.exe" --release
+                        --no-opengl-sw --no-translations
+                        "${CMAKE_INSTALL_PREFIX}/CinemaMecha.exe")
+    
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -66,6 +70,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "C:/Users/artur/Desktop/cinema/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/Users/artur/Downloads/cinema-2-20261118T000910Z-1-001/CinemaMecha/builds/GCC 13.1.0 x86_64-w64-mingw32/Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

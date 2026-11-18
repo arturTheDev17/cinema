@@ -1,3 +1,9 @@
+/**
+ * @file Tela1SelecaoFilmeWidget.cpp
+ * @brief Implementação da tela de seleção de filmes, sessões e ingressos Tela1SelecaoFilmeWidget.
+ */
+
+#include "Estilo.h"
 #include "Tela1SelecaoFilmeWidget.h"
 #include <QVBoxLayout>
 #include <QGridLayout>
@@ -7,13 +13,15 @@
 #include <QPushButton>
 #include <QFrame>
 #include <memory>
+#include "Formatacao.h"
 
+/** @details Monta grade rolável de filmes, lista de sessões, contadores de ingressos e barra de navegação. */
 Tela1SelecaoFilmeWidget::Tela1SelecaoFilmeWidget(RepositorioGenerico<Filme>& filmes,
                                                RepositorioGenerico<Sessao>& sessoes,
                                                Carrinho& carrinho,
                                                QWidget* parent)
     : QWidget(parent), repoFilmes(filmes), repoSessoes(sessoes), carrinho(carrinho), filmeSelecionadoIndex(-1),
-      qtdInteiraVal(0), qtdMeiaVal(0) {
+      qtdInteiraVal(0), qtdMeiaVal(0), colunasAtuais(0) {
 
     QVBoxLayout* mainLayout = new QVBoxLayout(this);
     QHBoxLayout* colunasLayout = new QHBoxLayout();
@@ -21,18 +29,20 @@ Tela1SelecaoFilmeWidget::Tela1SelecaoFilmeWidget(RepositorioGenerico<Filme>& fil
     QGroupBox* grpFilmes = new QGroupBox("Filmes em Cartaz", this);
     QVBoxLayout* layFilmesGrp = new QVBoxLayout(grpFilmes);
     
-    QScrollArea* scrollFilmes = new QScrollArea(this);
+    scrollFilmes = new QScrollArea(this);
     scrollFilmes->setWidgetResizable(true);
+    scrollFilmes->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); // A grade se adapta; nunca rola de lado
+    scrollFilmes->viewport()->installEventFilter(this);                 // Reorganiza quando a área visível muda
     containerFilmesCards = new QWidget(this);
     QGridLayout* gridCardsContainer = new QGridLayout(containerFilmesCards);
-    gridCardsContainer->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+    gridCardsContainer->setAlignment(Qt::AlignTop); // Sem AlignLeft: a grade ocupa toda a largura
     gridCardsContainer->setHorizontalSpacing(15);
     gridCardsContainer->setVerticalSpacing(15);
     scrollFilmes->setWidget(containerFilmesCards);
 
     lblDetalhesFilme = new QLabel("Selecione um filme acima.", this);
     lblDetalhesFilme->setWordWrap(true);
-    lblDetalhesFilme->setStyleSheet("color: #fbfef9; font-weight: bold; padding: 4px;");
+    lblDetalhesFilme->setStyleSheet("color: " COR_TEXTO "; font-weight: bold; padding: 4px;");
 
     layFilmesGrp->addWidget(scrollFilmes, 1);
     layFilmesGrp->addWidget(lblDetalhesFilme);
@@ -60,17 +70,17 @@ Tela1SelecaoFilmeWidget::Tela1SelecaoFilmeWidget(RepositorioGenerico<Filme>& fil
 
     btnMenosInteira = new QPushButton("-", this);
     btnMenosInteira->setFixedSize(35, 30);
-    btnMenosInteira->setStyleSheet("background-color: #D32222; color: white; font-weight: bold;");
+    btnMenosInteira->setStyleSheet("background-color: " COR_ERRO "; color: white; font-weight: bold;");
     btnMenosInteira->setCursor(Qt::PointingHandCursor);
 
     lblQtdInteira = new QLabel("0", this);
     lblQtdInteira->setAlignment(Qt::AlignCenter);
     lblQtdInteira->setFixedWidth(30);
-    lblQtdInteira->setStyleSheet("font-weight: bold; font-size: 14px; color: #dec402;");
+    lblQtdInteira->setStyleSheet("font-weight: bold; font-size: 14px; color: " COR_DESTAQUE ";");
 
     btnMaisInteira = new QPushButton("+", this);
     btnMaisInteira->setFixedSize(35, 30);
-    btnMaisInteira->setStyleSheet("background-color: #7FBB3A; color: white; font-weight: bold;");
+    btnMaisInteira->setStyleSheet("background-color: " COR_SUCESSO "; color: white; font-weight: bold;");
     btnMaisInteira->setCursor(Qt::PointingHandCursor);
 
     layoutInteira->addWidget(lblInteira, 1);
@@ -81,17 +91,17 @@ Tela1SelecaoFilmeWidget::Tela1SelecaoFilmeWidget(RepositorioGenerico<Filme>& fil
 
     btnMenosMeia = new QPushButton("-", this);
     btnMenosMeia->setFixedSize(35, 30);
-    btnMenosMeia->setStyleSheet("background-color: #D32222; color: white; font-weight: bold;");
+    btnMenosMeia->setStyleSheet("background-color: " COR_ERRO "; color: white; font-weight: bold;");
     btnMenosMeia->setCursor(Qt::PointingHandCursor);
 
     lblQtdMeia = new QLabel("0", this);
     lblQtdMeia->setAlignment(Qt::AlignCenter);
     lblQtdMeia->setFixedWidth(30);
-    lblQtdMeia->setStyleSheet("font-weight: bold; font-size: 14px; color: #dec402;");
+    lblQtdMeia->setStyleSheet("font-weight: bold; font-size: 14px; color: " COR_DESTAQUE ";");
 
     btnMaisMeia = new QPushButton("+", this);
     btnMaisMeia->setFixedSize(35, 30);
-    btnMaisMeia->setStyleSheet("background-color: #7FBB3A; color: white; font-weight: bold;");
+    btnMaisMeia->setStyleSheet("background-color: " COR_SUCESSO "; color: white; font-weight: bold;");
     btnMaisMeia->setCursor(Qt::PointingHandCursor);
 
     layoutMeia->addWidget(lblMeia, 1);
@@ -112,10 +122,11 @@ Tela1SelecaoFilmeWidget::Tela1SelecaoFilmeWidget(RepositorioGenerico<Filme>& fil
     btnProsseguir->setEnabled(false);
     btnProsseguir->setCursor(Qt::PointingHandCursor);
 
-    btnVoltar = new QPushButton("Voltar ao Início", this);
+    btnVoltar = new QPushButton("Voltar", this);
+    btnVoltar->setMinimumWidth(120);
     btnVoltar->setMinimumHeight(45);
     btnVoltar->setCursor(Qt::PointingHandCursor);
-
+    
     QHBoxLayout* navLayout = new QHBoxLayout();
     navLayout->addWidget(btnVoltar);
     navLayout->addWidget(btnProsseguir, 2);
@@ -155,6 +166,7 @@ Tela1SelecaoFilmeWidget::Tela1SelecaoFilmeWidget(RepositorioGenerico<Filme>& fil
     connect(btnVoltar, &QPushButton::clicked, this, &Tela1SelecaoFilmeWidget::voltarParaInicio);
 }
 
+/** @details Destrói os cards anteriores via deleteLater() e redistribui as colunas usadas no QGridLayout. */
 void Tela1SelecaoFilmeWidget::reconstruirCardsFilmes() {
     QLayoutItem* child;
     QGridLayout* gridLayout = qobject_cast<QGridLayout*>(containerFilmesCards->layout());
@@ -164,7 +176,7 @@ void Tela1SelecaoFilmeWidget::reconstruirCardsFilmes() {
         containerFilmesCards->setLayout(gridLayout);
     }
 
-    // deleteLater: o botao que emitiu o clicked() pode estar sendo destruido por aqui.
+    // deleteLater: o botão que emitiu o clicked() pode estar sendo destruído por aqui.
     while ((child = gridLayout->takeAt(0)) != nullptr) {
         if (QWidget* w = child->widget()) {
             w->hide();
@@ -176,31 +188,48 @@ void Tela1SelecaoFilmeWidget::reconstruirCardsFilmes() {
     const auto& filmes = repoFilmes.listarTodos();
     if (filmes.empty()) return;
 
-    int larguraCard = 145;
-    int larguraDisponivel = containerFilmesCards->width() - 20;
-    if (larguraDisponivel < larguraCard) larguraDisponivel = larguraCard;
-
-    int colunasMax = larguraDisponivel / larguraCard;
-    if (colunasMax < 1) colunasMax = 1;
-    if (colunasMax > static_cast<int>(filmes.size())) colunasMax = static_cast<int>(filmes.size());
+    const int colunasMax = calcularColunas();
+    colunasAtuais = colunasMax;
 
     int col = 0, row = 0;
     for (size_t i = 0; i < filmes.size(); ++i) {
         const auto& filme = filmes[i];
         QPushButton* btnCard = new QPushButton(this);
-        btnCard->setFixedSize(150, 200);
+        btnCard->setFixedSize(kLarguraCard, kAlturaCard);
         btnCard->setCursor(Qt::PointingHandCursor);
-        
-        QString textoBtn = QString("🎬\n\n%1\n\n%2\n%3 min")
-                                .arg(QString::fromStdString(filme.getTitulo()))
-                                .arg(QString::fromStdString(filme.getGenero()))
-                                .arg(filme.getDuracao());
-        btnCard->setText(textoBtn);
 
-        QString estiloCard = "QPushButton { background-color: #3d4d52; border: 2px solid #181c25; border-radius: 10px; font-size: 16px; font-weight: normal; color: #fbfef9; text-align: center; }"
-                             "QPushButton:hover { border-color: #dec402; color: #dec402; }";
+        // O conteúdo do card são QLabels com quebra de linha: títulos longos
+        // (ex.: "Avatar: O Caminho da Água") ocupam várias linhas em vez de serem cortados.
+        QVBoxLayout* layCard = new QVBoxLayout(btnCard);
+        layCard->setContentsMargins(8, 10, 8, 10);
+        layCard->setSpacing(6);
+
+        auto criarTexto = [btnCard](const QString& texto, int tamanhoPx, bool negrito) {
+            QLabel* lbl = new QLabel(texto, btnCard);
+            lbl->setAlignment(Qt::AlignCenter);
+            lbl->setWordWrap(true);
+            lbl->setAttribute(Qt::WA_TransparentForMouseEvents); // O clique vai para o botão
+            lbl->setStyleSheet(QString("font-size: %1px; font-weight: %2;")
+                                   .arg(tamanhoPx).arg(negrito ? "bold" : "normal"));
+            return lbl;
+        };
+        layCard->addStretch(1);
+        layCard->addWidget(criarTexto("🎬", 28, false));
+        layCard->addWidget(criarTexto(QString::fromStdString(filme.getTitulo()), 15, true));
+        layCard->addWidget(criarTexto(QString::fromStdString(filme.getGenero()), 13, false));
+        layCard->addWidget(criarTexto(QString("%1 min").arg(filme.getDuracao()), 13, false));
+        layCard->addStretch(1);
+
+        const QString estiloLabels = "QPushButton QLabel { background: transparent; border: none; color: " COR_TEXTO "; } ";
+        QString estiloCard;
         if (static_cast<int>(i) == filmeSelecionadoIndex) {
-            estiloCard = "QPushButton { background-color: #181c25; border: 3px solid #dec402; border-radius: 10px; font-size: 16px; color: #dec402; font-weight: bold; text-align: center; }";
+            estiloCard = "QPushButton { background-color: " COR_FUNDO "; border: 3px solid " COR_DESTAQUE "; border-radius: 10px; } "
+                         "QPushButton QLabel { background: transparent; border: none; color: " COR_DESTAQUE "; }";
+        } else {
+            estiloCard = "QPushButton { background-color: " COR_BORDA "; border: 2px solid " COR_FUNDO "; border-radius: 10px; } "
+                         + estiloLabels +
+                         "QPushButton:hover { border-color: " COR_DESTAQUE "; } "
+                         "QPushButton:hover QLabel { color: " COR_DESTAQUE "; }";
         }
         btnCard->setStyleSheet(estiloCard);
 
@@ -212,26 +241,66 @@ void Tela1SelecaoFilmeWidget::reconstruirCardsFilmes() {
         if (col >= colunasMax) { col = 0; row++; }
     }
 
-    for (int c = 0; c < colunasMax; ++c) {
-        gridLayout->setColumnStretch(c, 1);
+    // O QGridLayout nunca "encolhe": colunas de reconstruções anteriores continuam existindo.
+    // Zera todas e só distribui por igual as colunas realmente usadas agora.
+    for (int c = 0; c < gridLayout->columnCount(); ++c) {
+        gridLayout->setColumnStretch(c, c < colunasMax ? 1 : 0);
+        gridLayout->setColumnMinimumWidth(c, 0);
     }
 }
 
+/** @details Calcula quantas colunas de kLarguraCard cabem na largura útil do viewport. */
+int Tela1SelecaoFilmeWidget::calcularColunas() const {
+    int espaco = 15;
+    int margens = 22;
+    if (auto* grid = qobject_cast<QGridLayout*>(containerFilmesCards->layout())) {
+        if (grid->horizontalSpacing() >= 0) espaco = grid->horizontalSpacing();
+        const QMargins m = grid->contentsMargins();
+        margens = m.left() + m.right();
+    }
+
+    // Largura realmente disponível: área visível menos margens e uma folga para a barra vertical.
+    const int util = scrollFilmes->viewport()->width() - margens - 12;
+    int colunas = (util + espaco) / (kLarguraCard + espaco);
+    if (colunas < 1) colunas = 1;
+
+    const int totalFilmes = static_cast<int>(repoFilmes.tamanho());
+    if (totalFilmes > 0 && colunas > totalFilmes) colunas = totalFilmes;
+    return colunas;
+}
+
+/** @details Reconstrói a grade caso o redimensionamento do viewport altere a quantidade de colunas. */
+bool Tela1SelecaoFilmeWidget::eventFilter(QObject* alvo, QEvent* evento) {
+    if (alvo == scrollFilmes->viewport() && evento->type() == QEvent::Resize
+        && calcularColunas() != colunasAtuais) {
+        reconstruirCardsFilmes();
+    }
+    return QWidget::eventFilter(alvo, evento);
+}
+
+/** @details Reorganiza os cards apenas quando o número de colunas muda. */
 void Tela1SelecaoFilmeWidget::resizeEvent(QResizeEvent* event) {
     QWidget::resizeEvent(event);
-    reconstruirCardsFilmes();
+    if (calcularColunas() != colunasAtuais) {
+        reconstruirCardsFilmes();
+    }
 }
 
+/** @details Atualiza a grade ao exibir a tela se o número ideal de colunas mudou. */
 void Tela1SelecaoFilmeWidget::showEvent(QShowEvent* event) {
     QWidget::showEvent(event);
-    reconstruirCardsFilmes();
+    if (calcularColunas() != colunasAtuais) {
+        reconstruirCardsFilmes();
+    }
 }
 
+/** @details Atualiza os cards e a lista de sessões preservando a seleção atual. */
 void Tela1SelecaoFilmeWidget::atualizarCatalogo() {
     reconstruirCardsFilmes();
-    reconstruirListaSessoes(); // mantem a sessao ja escolhida, se houver
+    reconstruirListaSessoes(); // Mantém a sessão já escolhida, se houver
 }
 
+/** @details Limpa seleção de filme, sessões, detalhes e zera os contadores de ingressos. */
 void Tela1SelecaoFilmeWidget::resetar() {
     filmeSelecionadoIndex = -1;
     reconstruirCardsFilmes();
@@ -247,6 +316,7 @@ void Tela1SelecaoFilmeWidget::resetar() {
     btnProsseguir->setEnabled(false);
 }
 
+/** @details Marca o filme clicado, exibe seus metadados e popula as sessões correspondentes. */
 void Tela1SelecaoFilmeWidget::onFilmeCardClicado(int indexFilme) {
     filmeSelecionadoIndex = indexFilme;
     reconstruirCardsFilmes();
@@ -267,6 +337,7 @@ void Tela1SelecaoFilmeWidget::onFilmeCardClicado(int indexFilme) {
     reconstruirListaSessoes();
 }
 
+/** @details Filtra repoSessoes pelo ID do filme selecionado e restaura a linha previamente escolhida. */
 void Tela1SelecaoFilmeWidget::reconstruirListaSessoes() {
     const int linhaAnterior = listaSessoes->currentRow();
     listaSessoes->clear();
@@ -279,15 +350,15 @@ void Tela1SelecaoFilmeWidget::reconstruirListaSessoes() {
         const Sessao& s = repoSessoes.obter(i);
         if (s.getFilme().getId() == filme.getId()) {
             indicesSessoesFiltradas.push_back(static_cast<int>(i));
-            QString itemTexto = QString("%1 - R$ %2 (Livres: %3)")
+            QString itemTexto = QString("%1 - %2 (Livres: %3)")
                                     .arg(QString::fromStdString(s.getDescricaoCompleta()))
-                                    .arg(s.getPrecoBase(), 0, 'f', 2)
+                                    .arg(formatarMoeda(s.getPrecoBase()))
                                     .arg(s.getSala().contarAssentosLivres());
             listaSessoes->addItem(itemTexto);
         }
     }
 
-    // Novas sessoes entram no fim da lista, entao a linha escolhida continua valida.
+    // Novas sessões entram no fim da lista, então a linha escolhida continua válida.
     if (linhaAnterior >= 0 && linhaAnterior < listaSessoes->count()) {
         listaSessoes->setCurrentRow(linhaAnterior);
     }
@@ -303,6 +374,7 @@ void Tela1SelecaoFilmeWidget::onQuantidadeAlterada() {
     btnProsseguir->setEnabled(sessaoValida && totalIngressos > 0);
 }
 
+/** @details Confere lotação disponível, cria os objetos IngressoInteira e IngressoMeia no carrinho e avança. */
 void Tela1SelecaoFilmeWidget::onProsseguirClicado() {
     int rowSessao = listaSessoes->currentRow();
     if (rowSessao < 0 || static_cast<size_t>(rowSessao) >= indicesSessoesFiltradas.size()) return;
@@ -315,7 +387,7 @@ void Tela1SelecaoFilmeWidget::onProsseguirClicado() {
         QMessageBox msgBox(this);
         msgBox.setIcon(QMessageBox::Warning);
         msgBox.setWindowTitle("Aviso");
-        msgBox.setText("Nao ha assentos livres suficientes nesta sessao.");
+        msgBox.setText("Não há assentos livres suficientes nesta sessão.");
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.exec();
         return;
